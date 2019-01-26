@@ -1,0 +1,3 @@
+[submodule "materials"]
+	path = materials
+	url = https://github.com/ISU-MolPhyl/EEOB563-Spring2019.git

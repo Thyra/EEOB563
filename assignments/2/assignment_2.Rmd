@@ -1,0 +1,20 @@
+---
+title: 'EEOB563 -- Assignment #2'
+author: "Dennis Psaroudakis"
+date: "January 26th 2019"
+output:
+  pdf_document:
+    dev: pdf
+    latex_engine: lualatex
+    md_extensions: +link_attributes+multiline_tables
+    pandoc_args: --listings
+mainfontoptions: Numbers=OldStyle
+monofont: Linux Libertine Mono O
+mainfont: Linux Libertine O
+papersize: letter
+sansfont: Linux Biolinum O
+language: en-US
+...
+
+## 2
+
