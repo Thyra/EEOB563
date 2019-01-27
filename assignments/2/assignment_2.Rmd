@@ -14,6 +14,7 @@ mainfont: Linux Libertine O
 papersize: letter
 sansfont: Linux Biolinum O
 language: en-US
+titlepage: true
 ...
 
 ## 3
@@ -22,6 +23,7 @@ GitHub repo is https://github.com/Thyra/EEOB563
 ## 4
 a) The dinosaur sequence is highly similar to the cloning vector pAgaL as well as some other cloning vectors.
 b) The highest rated sequence is erythroid transcription factor from *Gallus gallus*. It is only 96% identical, there are some differences:
+
 ```
 Query  121   MEFVALGGPDAGSPTPFPDeagaflglgggerteaggllaSYPPSGRVSLVPWADTGTLG  300
              MEFVALGGPDAGSPTPFPDEAGAFLGLGGGERTEAGGLLASYPPSGRVSLVPWADTGTLG
@@ -54,6 +56,6 @@ These sequences might be homologous (I don't think I can be 100% sure just from 
 ## 6
 I let mafft choose the strategy (auto) and it chose L-INS-i, probably because there were so few sequences and not too long.
 
-![Tree created by mafft](./mafftTree.png){width=65%}}
+![Tree created by mafft](./mafftTree.pdf){width=95%}
 
 This tree is a guide tree so it is only a rough clustering of the species, not the final phylogenic tree. The actual algorithm to create the phylogenetic tree is run later.
