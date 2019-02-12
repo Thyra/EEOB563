@@ -1,0 +1,59 @@
+#NEXUS 
+
+Begin trees;  [Treefile saved Tue Feb 12 10:22:02 2019]
+[!
+>Data file = cob_aa_aligned.nxs
+>Heuristic search settings:
+>  Optimality criterion = parsimony
+>    Character-status summary:
+>      Of 382 total characters:
+>        All characters are of type 'unord'
+>        All characters have equal weight
+>        198 characters are constant (proportion = 0.518325)
+>        61 variable characters are parsimony-uninformative
+>        Number of parsimony-informative characters = 123
+>    Gaps are treated as "missing"
+>  Starting tree(s) obtained via stepwise addition
+>    Addition sequence: random
+>    Number of replicates = 1000
+>    Starting seed = generated automatically
+>    Number of trees held at each step = 1
+>  Branch-swapping algorithm: tree-bisection-reconnection (TBR) with reconnection limit = 8
+>    Steepest descent option not in effect
+>  Initial 'Maxtrees' setting = 100
+>  Branches collapsed (creating polytomies) if maximum branch length is zero
+>  'MulTrees' option in effect
+>  No topological constraints in effect
+>  Trees are unrooted
+>
+>Heuristic search completed
+>  Total number of rearrangements tried = 11885465
+>  Score of best tree(s) found = 743
+>  Number of trees retained = 2
+>  Time used = 4.89 sec (CPU time = 4.89 sec)
+]
+	Translate
+		1 Platypus,
+		2 Echidna,
+		3 Opossum,
+		4 Wallaby,
+		5 Bandicoot,
+		6 Elephant,
+		7 Aardvark,
+		8 Tenrec,
+		9 Sloth,
+		10 Armadillo,
+		11 Human,
+		12 Tree_shrew,
+		13 Rabbit,
+		14 Mouse,
+		15 Hedgehog,
+		16 Flying_fox,
+		17 Cat,
+		18 Dog,
+		19 Pig,
+		20 Whale
+		;
+tree 'PAUP_1' = [&U] (1:22,2:18,((3:20,(4:13,5:21):10):18,(((((((6:44,9:48):19,11:33):21,7:17):7,(17:24,18:18):10):9,(16:21,(19:12,20:32):6):9):5,(12:37,13:26):12):5,(((8:35,10:21):14,15:46):13,14:25):11):12):29);
+tree 'PAUP_2' = [&U] (1:22,2:18,((3:19,(4:14,5:20):11):16,(((((((6:42,15:50):18,11:39):12,7:19):7,(17:24,18:18):9):10,(16:20,(19:12,20:32):7):8):7,(((8:34,10:22):14,12:37):6,(9:56,13:20):11):11):8,14:27):12):31);
+End;

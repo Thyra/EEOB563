@@ -1,0 +1,1 @@
+ToNexus format=FASTA fromFile=cob_aa_aligned.fasta dataType=protein toFile=cob_aa_aligned.nxs

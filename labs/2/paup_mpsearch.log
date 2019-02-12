@@ -1,0 +1,1202 @@
+
+P A U P *
+Version 4.0a (build 164) for Unix/Linux (built on Nov  1 2018 at 23:10:44)
+Tue Feb 12 10:10:49 2019
+
+
+paup> AllTrees
+
+Error(#531): Exhaustive search is not allowed for more than 12 taxa (unrooted trees). The number of trees
+             would exceed the maximum that can be represented as a 32-bit integer value.
+
+paup> BandB
+
+Branch-and-bound search settings:
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 382 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        198 characters are constant (proportion = 0.518325)
+        61 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 123
+    Gaps are treated as "missing"
+  Initial upper bound: unknown (compute heuristically)
+  Addition sequence: furthest
+  Initial 'Maxtrees' setting = 100
+  Branches collapsed (creating polytomies) if maximum branch length is zero
+  'MulTrees' option in effect
+  No topological constraints in effect
+  Trees are unrooted
+
+Do you really want to stop the search? (Y/n)Y
+
+Branch-and-bound search aborted:
+  Score of best tree found = 747
+  Number of trees retained = 0
+  Time used = 30.03 sec (CPU time = 27.77 sec)
+
+paup> tstatus full
+
+Taxon-status summary:
+   Original data matrix contains 20 taxa
+   No taxa have been deleted
+   No taxa have been assigned to the outgroup: outgroup defaults to first taxon (Platypus)
+
+Current status of all taxa:
+
+   Taxon       Status
+ 1 Platypus    -
+ 2 Echidna     -
+ 3 Opossum     -
+ 4 Wallaby     -
+ 5 Bandicoot   -
+ 6 Elephant    -
+ 7 Aardvark    -
+ 8 Tenrec      -
+ 9 Sloth       -
+10 Armadillo   -
+11 Human       -
+12 Tree shrew  -
+13 Rabbit      -
+14 Mouse       -
+15 Hedgehog    -
+16 Flying fox  -
+17 Cat         -
+18 Dog         -
+19 Pig         -
+20 Whale       -
+
+paup> cstatus full
+
+Character-status summary:
+  Current optimality criterion = parsimony
+  No characters are excluded
+  Of 382 total characters:
+    All characters are of type 'unord'
+    All characters have equal weight
+    198 characters are constant (proportion = 0.518325)
+    61 variable characters are parsimony-uninformative
+    Number of parsimony-informative characters = 123
+
+Current status of all characters:
+
+Character        Type         Status      Weight   States
+----------------------------------------------------------
+1                -              UC             1   M
+2                Unord          U              1   ANHIST
+3                Unord          U              1   NHP
+4                Unord          -              1   ILP
+5                -              UC             1   R
+6                -              UC             1   K
+7                Unord          -              1   NIST
+8                Unord          U              1   NH
+9                -              UC             1   P
+10               -              UC             1   L
+11               Unord          -              1   AILF
+12               -              UC             1   K
+13               Unord          U              1   ILP
+14               Unord          -              1   IV
+15               -              UC             1   N
+16               Unord          -              1   NDQHKS
+17               Unord          -              1   AST
+18               Unord          -              1   LF
+19               -              UC             1   I
+20               -              UC             1   D
+21               -              UC             1   L
+22               -              UC             1   P
+23               Unord          -              1   AT
+24               -              UC             1   P
+25               Unord          -              1   ST
+26               Unord          U              1   NS
+27               -              UC             1   I
+28               -              UC             1   S
+29               Unord          -              1   AST
+30               -              UC             1   W
+31               -              UC             1   W
+32               -              UC             1   N
+33               Unord          U              1   LF
+34               -              UC             1   G
+35               -              UC             1   S
+36               -              UC             1   L
+37               -              UC             1   L
+38               -              UC             1   G
+39               Unord          -              1   AILMTV
+40               -              UC             1   C
+41               -              UC             1   L
+42               Unord          -              1   AITV
+43               Unord          -              1   ILMTV
+44               -              UC             1   Q
+45               -              UC             1   I
+46               Unord          -              1   AILFTV
+47               -              UC             1   T
+48               -              UC             1   G
+49               -              UC             1   L
+50               -              UC             1   F
+51               -              UC             1   L
+52               -              UC             1   A
+53               Unord          -              1   IM
+54               -              UC             1   H
+55               -              UC             1   Y
+56               Unord          -              1   ST
+57               Unord          -              1   APS
+58               -              UC             1   D
+59               Unord          U              1   AT
+60               Unord          -              1   AILST
+61               -              UC             1   T
+62               -              UC             1   A
+63               -              UC             1   F
+64               Unord          U              1   QS
+65               -              UC             1   S
+66               Unord          -              1   IV
+67               Unord          -              1   AST
+68               -              UC             1   H
+69               -              UC             1   I
+70               Unord          U              1   CST
+71               -              UC             1   R
+72               -              UC             1   D
+73               -              UC             1   V
+74               -              UC             1   N
+75               -              UC             1   Y
+76               -              UC             1   G
+77               -              UC             1   W
+78               Unord          -              1   ILTV
+79               Unord          U              1   IL
+80               -              UC             1   R
+81               Unord          -              1   NQHY
+82               Unord          -              1   ILMT
+83               -              UC             1   H
+84               Unord          U              1   AS
+85               -              UC             1   N
+86               -              UC             1   G
+87               -              UC             1   A
+88               -              UC             1   S
+89               Unord          -              1   IL
+90               -              UC             1   F
+91               -              UC             1   F
+92               Unord          U              1   AILM
+93               -              UC             1   C
+94               Unord          -              1   IL
+95               Unord          -              1   FY
+96               Unord          -              1   AILT
+97               -              UC             1   H
+98               Unord          -              1   IMV
+99               -              UC             1   G
+100              -              UC             1   R
+101              Unord          -              1   NG
+102              Unord          -              1   IL
+103              -              UC             1   Y
+104              -              UC             1   Y
+105              -              UC             1   G
+106              -              UC             1   S
+107              Unord          U              1   HFY
+108              Unord          -              1   AILMSTV
+109              Unord          -              1   NQFY
+110              Unord          -              1   RILKSTY
+111              -              UC             1   E
+112              -              UC             1   T
+113              -              UC             1   W
+114              -              UC             1   N
+115              Unord          -              1   ITV
+116              -              UC             1   G
+117              Unord          -              1   IV
+118              Unord          -              1   ILV
+119              -              UC             1   L
+120              Unord          U              1   IL
+121              Unord          -              1   ILF
+122              Unord          -              1   AIT
+123              Unord          -              1   TV
+124              Unord          U              1   IM
+125              -              UC             1   A
+126              -              UC             1   T
+127              -              UC             1   A
+128              -              UC             1   F
+129              Unord          -              1   IMV
+130              -              UC             1   G
+131              -              UC             1   Y
+132              -              UC             1   V
+133              -              UC             1   L
+134              -              UC             1   P
+135              -              UC             1   W
+136              -              UC             1   G
+137              -              UC             1   Q
+138              Unord          U              1   IM
+139              -              UC             1   S
+140              -              UC             1   F
+141              -              UC             1   W
+142              -              UC             1   G
+143              -              UC             1   A
+144              -              UC             1   T
+145              -              UC             1   V
+146              -              UC             1   I
+147              -              UC             1   T
+148              -              UC             1   N
+149              -              UC             1   L
+150              Unord          U              1   LF
+151              -              UC             1   S
+152              -              UC             1   A
+153              -              UC             1   I
+154              -              UC             1   P
+155              -              UC             1   Y
+156              Unord          U              1   IV
+157              -              UC             1   G
+158              Unord          U              1   NST
+159              Unord          -              1   NDET
+160              -              UC             1   L
+161              -              UC             1   V
+162              Unord          -              1   QE
+163              -              UC             1   W
+164              -              UC             1   I
+165              -              UC             1   W
+166              -              UC             1   G
+167              Unord          U              1   GS
+168              Unord          U              1   FY
+169              -              UC             1   S
+170              Unord          U              1   IV
+171              Unord          U              1   DE
+172              Unord          U              1   KS
+173              Unord          U              1   AP
+174              -              UC             1   T
+175              -              UC             1   L
+176              Unord          U              1   NT
+177              -              UC             1   R
+178              -              UC             1   F
+179              -              UC             1   F
+180              Unord          -              1   AGT
+181              Unord          -              1   LF
+182              -              UC             1   H
+183              -              UC             1   F
+184              Unord          U              1   IL
+185              Unord          U              1   ALF
+186              -              UC             1   P
+187              -              UC             1   F
+188              Unord          -              1   ITV
+189              Unord          -              1   IV
+190              Unord          -              1   AILSTV
+191              Unord          U              1   AT
+192              Unord          -              1   IL
+193              Unord          -              1   ATV
+194              Unord          -              1   AGILV
+195              Unord          -              1   ILTV
+196              -              UC             1   H
+197              -              UC             1   L
+198              Unord          U              1   ILT
+199              -              UC             1   F
+200              -              UC             1   L
+201              -              UC             1   H
+202              -              UC             1   E
+203              Unord          U              1   AST
+204              -              UC             1   G
+205              -              UC             1   S
+206              Unord          U              1   NS
+207              -              UC             1   N
+208              -              UC             1   P
+209              Unord          -              1   LST
+210              -              UC             1   G
+211              Unord          -              1   IL
+212              Unord          -              1   NDIPST
+213              Unord          -              1   PS
+214              Unord          -              1   NDEH
+215              Unord          -              1   AIPS
+216              -              UC             1   D
+217              Unord          U              1   IKT
+218              -              UC             1   I
+219              Unord          U              1   PST
+220              -              UC             1   F
+221              -              UC             1   H
+222              -              UC             1   P
+223              -              UC             1   Y
+224              Unord          U              1   HY
+225              Unord          -              1   ST
+226              Unord          U              1   ILV
+227              -              UC             1   K
+228              -              UC             1   D
+229              Unord          -              1   AILMFT
+230              Unord          U              1   LV
+231              -              UC             1   G
+232              Unord          -              1   AILFV
+233              Unord          -              1   CILFV
+234              Unord          -              1   ILFV
+235              Unord          -              1   AILFT
+236              Unord          -              1   ILFTV
+237              Unord          U              1   AIL
+238              Unord          -              1   AILFSTV
+239              Unord          U              1   LT
+240              Unord          -              1   ILMS
+241              Unord          -              1   AGILST
+242              -              UC             1   L
+243              Unord          -              1   ATV
+244              Unord          U              1   ILM
+245              Unord          -              1   LF
+246              Unord          -              1   AHFSTY
+247              -              UC             1   P
+248              -              UC             1   D
+249              Unord          -              1   ILM
+250              -              UC             1   L
+251              -              UC             1   G
+252              -              UC             1   D
+253              -              UC             1   P
+254              Unord          U              1   NDS
+255              -              UC             1   N
+256              Unord          -              1   FY
+257              Unord          -              1   IMST
+258              Unord          U              1   LP
+259              -              UC             1   A
+260              Unord          U              1   ND
+261              -              UC             1   P
+262              -              UC             1   L
+263              Unord          -              1   NSV
+264              -              UC             1   T
+265              -              UC             1   P
+266              Unord          U              1   ALP
+267              -              UC             1   H
+268              -              UC             1   I
+269              -              UC             1   K
+270              -              UC             1   P
+271              -              UC             1   E
+272              -              UC             1   W
+273              -              UC             1   Y
+274              -              UC             1   F
+275              -              UC             1   L
+276              -              UC             1   F
+277              -              UC             1   A
+278              -              UC             1   Y
+279              Unord          -              1   AT
+280              -              UC             1   I
+281              -              UC             1   L
+282              -              UC             1   R
+283              -              UC             1   S
+284              Unord          -              1   ITV
+285              -              UC             1   P
+286              Unord          U              1   NS
+287              -              UC             1   K
+288              -              UC             1   L
+289              -              UC             1   G
+290              -              UC             1   G
+291              -              UC             1   V
+292              Unord          U              1   LV
+293              Unord          U              1   AT
+294              -              UC             1   L
+295              Unord          -              1   AILFV
+296              Unord          -              1   ACILFT
+297              -              UC             1   S
+298              -              UC             1   I
+299              Unord          U              1   IL
+300              Unord          -              1   IV
+301              -              UC             1   L
+302              Unord          -              1   AGILFV
+303              Unord          -              1   ILF
+304              Unord          -              1   ILMFV
+305              -              UC             1   P
+306              Unord          -              1   ILFY
+307              Unord          U              1   LT
+308              -              UC             1   H
+309              Unord          U              1   IMT
+310              Unord          -              1   AS
+311              Unord          U              1   RNKY
+312              Unord          -              1   QH
+313              Unord          U              1   RQ
+314              Unord          -              1   GS
+315              Unord          -              1   ILM
+316              Unord          -              1   AIMTV
+317              Unord          U              1   LF
+318              -              UC             1   R
+319              -              UC             1   P
+320              Unord          -              1   ILFV
+321              Unord          -              1   ST
+322              -              UC             1   Q
+323              Unord          -              1   CIMFSTV
+324              Unord          -              1   IL
+325              Unord          -              1   FY
+326              -              UC             1   W
+327              Unord          -              1   ILSTV
+328              -              UC             1   L
+329              Unord          -              1   ATV
+330              Unord          -              1   AIST
+331              Unord          -              1   ND
+332              -              UC             1   L
+333              Unord          -              1   AILF
+334              Unord          -              1   AIT
+335              -              UC             1   L
+336              -              UC             1   T
+337              -              UC             1   W
+338              -              UC             1   I
+339              -              UC             1   G
+340              Unord          -              1   GS
+341              -              UC             1   Q
+342              -              UC             1   P
+343              Unord          U              1   IV
+344              Unord          U              1   DES
+345              Unord          -              1   NDQHPY
+346              -              UC             1   P
+347              Unord          -              1   FY
+348              Unord          -              1   ITV
+349              Unord          -              1   ILT
+350              Unord          U              1   IV
+351              -              UC             1   G
+352              Unord          U              1   QL
+353              Unord          -              1   ILV
+354              -              UC             1   A
+355              -              UC             1   S
+356              Unord          -              1   IV
+357              Unord          -              1   ILSTY
+358              -              UC             1   Y
+359              -              UC             1   F
+360              Unord          -              1   AILST
+361              Unord          -              1   ILST
+362              Unord          -              1   IL
+363              Unord          -              1   ILTV
+364              Unord          -              1   AITV
+365              Unord          -              1   ILF
+366              Unord          U              1   ILT
+367              -              UC             1   P
+368              Unord          -              1   ILFTV
+369              Unord          -              1   AISTV
+370              Unord          -              1   GS
+371              Unord          -              1   ILMSWV
+372              Unord          -              1   ILFYV
+373              -              UC             1   E
+374              Unord          -              1   ND
+375              Unord          -              1   RNDHKY
+376              Unord          -              1   IL
+377              Unord          -              1   ILMF
+378              Unord          U              1   EK
+379              -              UC             1   P
+380              Unord          U              1   LK
+381              Unord          U              1   FWY
+382              Unord          -              1   RP
+
+paup> delete 1-5
+
+Taxon-deletion status changed:
+  5 taxa deleted
+  Total number of taxa now deleted = 5
+  Number of nondeleted taxa = 15
+
+paup> tstatus all
+
+Error(#143): Keyword "all" is not recognized.
+                 If the keyword is valid for the current command and it is spelled correctly, look for
+                 problems in a previous command, such as a missing semicolon.
+
+paup> tstatus
+
+Taxon-status summary:
+   Original data matrix contains 20 taxa
+   5 taxa have been deleted
+   Number of nondeleted taxa = 15
+   No taxa have been assigned to the outgroup: outgroup defaults to first taxon (Elephant)
+
+Current status of all taxa:
+
+   Taxon       Status
+ 1 Platypus    D
+ 2 Echidna     D
+ 3 Opossum     D
+ 4 Wallaby     D
+ 5 Bandicoot   D
+ 6 Elephant    -
+ 7 Aardvark    -
+ 8 Tenrec      -
+ 9 Sloth       -
+10 Armadillo   -
+11 Human       -
+12 Tree shrew  -
+13 Rabbit      -
+14 Mouse       -
+15 Hedgehog    -
+16 Flying fox  -
+17 Cat         -
+18 Dog         -
+19 Pig         -
+20 Whale       -
+
+paup> delete 17-19
+
+Taxon-deletion status changed:
+  3 taxa deleted
+  Total number of taxa now deleted = 8
+  Number of nondeleted taxa = 12
+
+paup> BandB
+
+Branch-and-bound search settings:
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 382 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        212 characters are constant (proportion = 0.554974)
+        70 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 100
+    Gaps are treated as "missing"
+  Initial upper bound: unknown (compute heuristically)
+  Addition sequence: furthest
+  Initial 'Maxtrees' setting = 100
+  Branches collapsed (creating polytomies) if maximum branch length is zero
+  'MulTrees' option in effect
+  No topological constraints in effect
+  Trees are unrooted
+
+Branch-and-bound search completed:
+  Score of best tree found = 506
+  Number of trees retained = 1
+  Time used = 52.30 sec (CPU time = 52.31 sec)
+
+paup> showtrees all
+
+Note: No outgroup has been defined; tree is (arbitrarily) rooted at first nondeleted taxon.
+
+Tree 1 (rooted using default outgroup)
+
+/------------------------------------------------------------------------------------------------- Elephant
+|
+|                                         /------------------------------------------------------- Aardvark
+|                                         |
+|                                         |                                        /-------------- Tenrec
+|                                         |                          /-------------+
+|                                         |                          |             \-------------- Armadillo
+|                           /-------------+            /-------------+
+|                           |             |            |             |             /-------------- Mouse
+|                           |             |            |             \-------------+
+|                           |             |            |                           \-------------- Hedgehog
+|                           |             \------------+
+|                           |                          |                           /-------------- Tree shrew
+|             /-------------+                          |             /-------------+
+|             |             |                          |             |             \-------------- Rabbit
+|             |             |                          \-------------+
+|             |             |                                        |             /-------------- Flying fox
+|             |             |                                        \-------------+
+\-------------+             |                                                      \-------------- Whale
+              |             |
+              |             \--------------------------------------------------------------------- Human
+              |
+              \----------------------------------------------------------------------------------- Sloth
+
+paup> describe
+
+Tree description:
+
+  Unrooted tree(s) rooted using outgroup method
+
+  Note: No outgroup has been defined; tree is (arbitrarily) rooted at first nondeleted taxon.
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 382 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        212 characters are constant (proportion = 0.554974)
+        70 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 100
+    Gaps are treated as "missing"
+    Character-state optimization: Accelerated transformation (ACCTRAN)
+
+Tree 1 (rooted using default outgroup)
+
+Tree length = 506
+Consistency index (CI) = 0.6621
+Homoplasy index (HI) = 0.3379
+CI excluding uninformative characters = 0.5799
+HI excluding uninformative characters = 0.4201
+Retention index (RI) = 0.3049
+Rescaled consistency index (RC) = 0.2018
+
+/------------------------------------------------------------------------------------------------- Elephant
+|
+|                                         /------------------------------------------------------- Aardvark
+|                                         |
+|                                         |                                        /-------------- Tenrec
+|                                         |                          /------------21
+|                                         |                          |             \-------------- Armadillo
+|                           /------------28            /------------23
+|                           |             |            |             |             /-------------- Mouse
+|                           |             |            |             \------------22
+|                           |             |            |                           \-------------- Hedgehog
+|                           |             \-----------27
+|                           |                          |                           /-------------- Tree shrew
+|             /------------29                          |             /------------24
+|             |             |                          |             |             \-------------- Rabbit
+|             |             |                          \------------26
+|             |             |                                        |             /-------------- Flying fox
+|             |             |                                        \------------25
+\------------30             |                                                      \-------------- Whale
+              |             |
+              |             \--------------------------------------------------------------------- Human
+              |
+              \----------------------------------------------------------------------------------- Sloth
+
+paup> undelete all
+
+Trees in memory will be lost if taxa are restored. Do you want to proceed anyway? (Y/n)Y
+
+All trees cleared from memory.
+
+Taxon-deletion status changed:
+  8 taxa restored
+  Total number of taxa now deleted = 0
+  Number of nondeleted taxa = 20
+
+paup> hsearch ?
+
+Usage: HSearch [options...];
+
+Available options:
+
+Keyword ------- Option type -------------------------------------- Current setting -----------------
+swap            none|NNI|SPR|TBR                                   TBR
+keep            <real-value>|No                                    No
+mulTrees        no|yes                                             yes
+writeCurTree    no|yes                                             no
+enforce         no|yes                                             no
+constraints     <constraint-name>                                  (none)
+converse        no|yes                                             no
+reconLimit      <integer-value>|infinity                           8
+nchuck          <integer-value>                                    0
+chuckScore      <real-value>|No                                    No
+start           stepwise|NJ|current|<tree-number>[-<tree-number>] *Stepwise
+addSeq          simple|closest|asIs|random|furthest                simple
+nreps           <integer-value>                                    10
+rseed           <int> or <int:int:int:int>                         0
+rstatus         no|yes                                             no
+saveReps        no|yes                                             no
+refTax          <integer-value>                                    0
+hold            <integer-value>|No                                 1
+nbest           <integer-value>|all                                all
+allSwap         no|yes                                             no
+useNonMin       no|yes                                             no
+steepest        no|yes                                             no
+abortRep        no|yes                                             no
+retain          no|yes                                            *no
+statusWin       no|yes                                             yes
+dStatus         <integer-value>|none                               60
+randomize       addSeq|trees                                       addSeq
+timeLimit       <integer-value>|none                               none
+rearrLimit      <integer-value>|none                               none
+limitPerRep     no|yes                                             no
+                                                                  *Option is nonpersistent
+
+paup> hsearch start=stepwise addseq=random nreps=100 swap=TBR
+
+Heuristic search settings:
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 382 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        198 characters are constant (proportion = 0.518325)
+        61 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 123
+    Gaps are treated as "missing"
+  Starting tree(s) obtained via stepwise addition
+    Addition sequence: random
+    Number of replicates = 100
+    Starting seed = generated automatically
+    Number of trees held at each step = 1
+  Branch-swapping algorithm: tree-bisection-reconnection (TBR) with reconnection limit = 8
+    Steepest descent option not in effect
+  Initial 'Maxtrees' setting = 100
+  Branches collapsed (creating polytomies) if maximum branch length is zero
+  'MulTrees' option in effect
+  No topological constraints in effect
+  Trees are unrooted
+
+Heuristic search completed
+  Total number of rearrangements tried = 1123576
+  Score of best tree(s) found = 743
+  Number of trees retained = 2
+  Time used = 0.46 sec (CPU time = 0.47 sec)
+
+Tree-island profile:
+                     First      Last                        First    Times
+Island      Size      tree      tree           Score    replicate      hit
+--------------------------------------------------------------------------
+     1         1         1         1             743            2      21
+     2         1         2         2             743            3      19
+     3         1         -         -             744           32       1
+     4         2         -         -             744            1      31*
+     5         5         -         -             744           11       1
+     6         1         -         -             745           10       7*
+     7         3         -         -             745           26       8*
+     8         3         -         -             746           50       2*
+     9         2         -         -             747           49       4*
+    10         4         -         -             747           58       3*
+    11         1         -         -             748           28       2*
+    12         2         -         -             748           82       1
+
+Note(s):
+    * Multiple hits on islands of unsaved trees may in fact represent different islands
+
+paup> hsearch start=stepwise addseq=random nreps=1000 swap=TBR
+
+Heuristic search settings:
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 382 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        198 characters are constant (proportion = 0.518325)
+        61 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 123
+    Gaps are treated as "missing"
+  Starting tree(s) obtained via stepwise addition
+    Addition sequence: random
+    Number of replicates = 1000
+    Starting seed = generated automatically
+    Number of trees held at each step = 1
+  Branch-swapping algorithm: tree-bisection-reconnection (TBR) with reconnection limit = 8
+    Steepest descent option not in effect
+  Initial 'Maxtrees' setting = 100
+  Branches collapsed (creating polytomies) if maximum branch length is zero
+  'MulTrees' option in effect
+  No topological constraints in effect
+  Trees are unrooted
+
+Heuristic search completed
+  Total number of rearrangements tried = 11885465
+  Score of best tree(s) found = 743
+  Number of trees retained = 2
+  Time used = 4.89 sec (CPU time = 4.89 sec)
+
+Tree-island profile:
+                     First      Last                        First    Times
+Island      Size      tree      tree           Score    replicate      hit
+--------------------------------------------------------------------------
+     1         1         1         1             743            4     187
+     2         1         2         2             743           10     168
+     3         1         -         -             744           23      38*
+     4         2         -         -             744            3     263*
+     5         5         -         -             744            2      37*
+     6         1         -         -             745           16      88*
+     7         2         -         -             745          486       5*
+     8         3         -         -             745           26     113*
+     9         1         -         -             746          226       5*
+    10         2         -         -             746           35      14*
+    11         3         -         -             746          288       8*
+    12         6         -         -             746          706       2*
+    13         1         -         -             747           54       7*
+    14         2         -         -             747            6      23*
+    15         3         -         -             747          202       2*
+    16         4         -         -             747            1      22*
+    17         1         -         -             748            8       8*
+    18         2         -         -             748          389       1
+    19         1         -         -             749          631       1
+    20         2         -         -             749          963       1
+    21         1         -         -             750          160       3*
+    22         2         -         -             750          373       3*
+    23         1         -         -             751          120       1
+
+Note(s):
+    * Multiple hits on islands of unsaved trees may in fact represent different islands
+
+paup> showtrees all
+
+Note: No outgroup has been defined; trees are (arbitrarily) rooted at first taxon.
+
+Tree 1 (rooted using default outgroup)
+
+/------------------------------------------------------------------------------------------------- Platypus
+|
+|         /--------------------------------------------------------------------------------------- Echidna
+|         |
+|         |                                                                   /------------------- Opossum
+|         |                                                                   |
+|         |        /----------------------------------------------------------+        /---------- Wallaby
+|         |        |                                                          \--------+
+|         |        |                                                                   \---------- Bandicoot
+|         |        |
+\---------+        |                                                                   /---------- Elephant
+          |        |                                                          /--------+
+          |        |                                                          |        \---------- Sloth
+          |        |                                                /---------+
+          |        |                                      /---------+         \------------------- Human
+          |        |                                      |         |
+          |        |                                      |         \----------------------------- Aardvark
+          |        |                             /--------+
+          \--------+                             |        |                            /---------- Cat
+                   |                             |        \----------------------------+
+                   |                   /---------+                                     \---------- Dog
+                   |                   |         |
+                   |                   |         |                            /------------------- Flying fox
+                   |                   |         |                            |
+                   |                   |         \----------------------------+        /---------- Pig
+                   |         /---------+                                      \--------+
+                   |         |         |                                               \---------- Whale
+                   |         |         |
+                   |         |         |                                               /---------- Tree shrew
+                   |         |         \-----------------------------------------------+
+                   \---------+                                                         \---------- Rabbit
+                             |
+                             |                                                         /---------- Tenrec
+                             |                                                /--------+
+                             |                                                |        \---------- Armadillo
+                             |                                      /---------+
+                             \--------------------------------------+         \------------------- Hedgehog
+                                                                    |
+                                                                    \----------------------------- Mouse
+
+Tree 2 (rooted using default outgroup)
+
+/------------------------------------------------------------------------------------------------- Platypus
+|
+|         /--------------------------------------------------------------------------------------- Echidna
+|         |
+|         |                                                                   /------------------- Opossum
+|         |                                                                   |
+|         |        /----------------------------------------------------------+        /---------- Wallaby
+|         |        |                                                          \--------+
+|         |        |                                                                   \---------- Bandicoot
+|         |        |
+\---------+        |                                                                   /---------- Elephant
+          |        |                                                          /--------+
+          |        |                                                          |        \---------- Hedgehog
+          |        |                                                /---------+
+          |        |                                      /---------+         \------------------- Human
+          |        |                                      |         |
+          |        |                                      |         \----------------------------- Aardvark
+          |        |                             /--------+
+          |        |                             |        |                            /---------- Cat
+          \--------+                             |        \----------------------------+
+                   |                   /---------+                                     \---------- Dog
+                   |                   |         |
+                   |                   |         |                            /------------------- Flying fox
+                   |                   |         |                            |
+                   |                   |         \----------------------------+        /---------- Pig
+                   |                   |                                      \--------+
+                   |         /---------+                                               \---------- Whale
+                   |         |         |
+                   |         |         |                                               /---------- Tenrec
+                   |         |         |                                      /--------+
+                   |         |         |                                      |        \---------- Armadillo
+                   |         |         |                            /---------+
+                   \---------+         |                            |         \------------------- Tree shrew
+                             |         \----------------------------+
+                             |                                      |                  /---------- Sloth
+                             |                                      \------------------+
+                             |                                                         \---------- Rabbit
+                             |
+                             \-------------------------------------------------------------------- Mouse
+
+paup> describe
+
+Tree description:
+
+  Unrooted tree(s) rooted using outgroup method
+
+  Note: No outgroup has been defined; trees are (arbitrarily) rooted at first taxon.
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 382 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        198 characters are constant (proportion = 0.518325)
+        61 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 123
+    Gaps are treated as "missing"
+    Character-state optimization: Accelerated transformation (ACCTRAN)
+
+Tree 1 (rooted using default outgroup)
+
+Tree length = 743
+Consistency index (CI) = 0.5437
+Homoplasy index (HI) = 0.4563
+CI excluding uninformative characters = 0.4824
+HI excluding uninformative characters = 0.5176
+Retention index (RI) = 0.3803
+Rescaled consistency index (RC) = 0.2068
+
+/------------------------------------------------------------------------------------------------- Platypus
+|
+|         /--------------------------------------------------------------------------------------- Echidna
+|         |
+|         |                                                                   /------------------- Opossum
+|         |                                                                   |
+|         |        /---------------------------------------------------------22        /---------- Wallaby
+|         |        |                                                          \-------21
+|         |        |                                                                   \---------- Bandicoot
+|         |        |
+\--------38        |                                                                   /---------- Elephant
+          |        |                                                          /-------23
+          |        |                                                          |        \---------- Sloth
+          |        |                                                /--------24
+          |        |                                      /--------25         \------------------- Human
+          |        |                                      |         |
+          |        |                                      |         \----------------------------- Aardvark
+          |        |                             /-------27
+          \-------37                             |        |                            /---------- Cat
+                   |                             |        \---------------------------26
+                   |                   /--------30                                     \---------- Dog
+                   |                   |         |
+                   |                   |         |                            /------------------- Flying fox
+                   |                   |         |                            |
+                   |                   |         \---------------------------29        /---------- Pig
+                   |         /--------32                                      \-------28
+                   |         |         |                                               \---------- Whale
+                   |         |         |
+                   |         |         |                                               /---------- Tree shrew
+                   |         |         \----------------------------------------------31
+                   \--------36                                                         \---------- Rabbit
+                             |
+                             |                                                         /---------- Tenrec
+                             |                                                /-------33
+                             |                                                |        \---------- Armadillo
+                             |                                      /--------34
+                             \-------------------------------------35         \------------------- Hedgehog
+                                                                    |
+                                                                    \----------------------------- Mouse
+
+Tree 2 (rooted using default outgroup)
+
+Tree length = 743
+Consistency index (CI) = 0.5437
+Homoplasy index (HI) = 0.4563
+CI excluding uninformative characters = 0.4824
+HI excluding uninformative characters = 0.5176
+Retention index (RI) = 0.3803
+Rescaled consistency index (RC) = 0.2068
+
+/------------------------------------------------------------------------------------------------- Platypus
+|
+|         /--------------------------------------------------------------------------------------- Echidna
+|         |
+|         |                                                                   /------------------- Opossum
+|         |                                                                   |
+|         |        /---------------------------------------------------------22        /---------- Wallaby
+|         |        |                                                          \-------21
+|         |        |                                                                   \---------- Bandicoot
+|         |        |
+\--------38        |                                                                   /---------- Elephant
+          |        |                                                          /-------23
+          |        |                                                          |        \---------- Hedgehog
+          |        |                                                /--------24
+          |        |                                      /--------25         \------------------- Human
+          |        |                                      |         |
+          |        |                                      |         \----------------------------- Aardvark
+          |        |                             /-------27
+          |        |                             |        |                            /---------- Cat
+          \-------37                             |        \---------------------------26
+                   |                   /--------30                                     \---------- Dog
+                   |                   |         |
+                   |                   |         |                            /------------------- Flying fox
+                   |                   |         |                            |
+                   |                   |         \---------------------------29        /---------- Pig
+                   |                   |                                      \-------28
+                   |         /--------35                                               \---------- Whale
+                   |         |         |
+                   |         |         |                                               /---------- Tenrec
+                   |         |         |                                      /-------31
+                   |         |         |                                      |        \---------- Armadillo
+                   |         |         |                            /--------32
+                   \--------36         |                            |         \------------------- Tree shrew
+                             |         \---------------------------34
+                             |                                      |                  /---------- Sloth
+                             |                                      \-----------------33
+                             |                                                         \---------- Rabbit
+                             |
+                             \-------------------------------------------------------------------- Mouse
+
+paup> outgroup 1-2
+
+Outgroup status changed:
+  2 taxa transferred to outgroup
+  Total number of taxa now in outgroup = 2
+  Number of ingroup taxa = 18
+
+paup> describe /plot=phylo
+
+Tree description:
+
+  Unrooted tree(s) rooted using outgroup method
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 382 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        198 characters are constant (proportion = 0.518325)
+        61 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 123
+    Gaps are treated as "missing"
+    Character-state optimization: Accelerated transformation (ACCTRAN)
+
+Tree 1 (rooted using user-specified outgroup)
+
+Tree length = 743
+Consistency index (CI) = 0.5437
+Homoplasy index (HI) = 0.4563
+CI excluding uninformative characters = 0.4824
+HI excluding uninformative characters = 0.5176
+Retention index (RI) = 0.3803
+Rescaled consistency index (RC) = 0.2068
+
+/-------------- Platypus
+|
++----------- Echidna
+|
+|                            /------------- Opossum
+|                            |
+|                 /---------22      /-------- Wallaby
+|                 |          \-----21
+|                 |                 \------------- Bandicoot
+38                |
+|                 |                                                /--------------------------- Elephant
+|                 |                                    /----------23
+|                 |                                    |           \------------------------------ Sloth
+|                 |                       /-----------24
+|                 |                   /--25            \--------------------- Human
+|                 |                   |   |
+|                 |                   |   \----------- Aardvark
+|                 |             /----27
+\----------------37             |     |     /--------------- Cat
+                  |             |     \----26
+                  |          /-30           \----------- Dog
+                  |          |  |
+                  |          |  |     /------------- Flying fox
+                  |          |  |     |
+                  |          |  \----29  /-------- Pig
+                  |       /-32        \-28
+                  |       |  |           \-------------------- Whale
+                  |       |  |
+                  |       |  |      /----------------------- Tree shrew
+                  |       |  \-----31
+                  \------36         \----------------- Rabbit
+                          |
+                          |                      /---------------------- Tenrec
+                          |              /------33
+                          |              |       \-------------- Armadillo
+                          |      /------34
+                          \-----35       \---------------------------- Hedgehog
+                                 |
+                                 \--------------- Mouse
+
+Tree 2 (rooted using user-specified outgroup)
+
+Tree length = 743
+Consistency index (CI) = 0.5437
+Homoplasy index (HI) = 0.4563
+CI excluding uninformative characters = 0.4824
+HI excluding uninformative characters = 0.5176
+Retention index (RI) = 0.3803
+Rescaled consistency index (RC) = 0.2068
+
+/-------------- Platypus
+|
++----------- Echidna
+|
+|                            /------------ Opossum
+|                            |
+|                  /--------22      /--------- Wallaby
+|                  |         \-----21
+|                  |                \------------- Bandicoot
+38                 |
+|                  |                                              /-------------------------- Elephant
+|                  |                                  /----------23
+|                  |                                  |           \------------------------------- Hedgehog
+|                  |                           /-----24
+|                  |                       /--25      \------------------------- Human
+|                  |                       |   |
+|                  |                       |   \------------ Aardvark
+|                  |                /-----27
+|                  |                |      |    /--------------- Cat
+\-----------------37                |      \---26
+                   |            /--30           \----------- Dog
+                   |            |   |
+                   |            |   |    /------------- Flying fox
+                   |            |   |    |
+                   |            |   \---29    /------- Pig
+                   |            |        \---28
+                   |       /---35             \-------------------- Whale
+                   |       |    |
+                   |       |    |                  /---------------------- Tenrec
+                   |       |    |          /------31
+                   |       |    |          |       \-------------- Armadillo
+                   |       |    |      /--32
+                   \------36    |      |   \----------------------- Tree shrew
+                           |    \-----34
+                           |           |      /----------------------------------- Sloth
+                           |           \-----33
+                           |                  \------------ Rabbit
+                           |
+                           \----------------- Mouse
+
+paup> contree
+
+Strict consensus of 2 trees:
+
+/------------------------------------------------------------------------------------------------- Platypus
+|
++------------------------------------------------------------------------------------------------- Echidna
+|
+|                                                         /--------------------------------------- Opossum
+|                                                         |
+|                  /--------------------------------------+                   /------------------- Wallaby
+|                  |                                      \-------------------+
+|                  |                                                          \------------------- Bandicoot
+|                  |
+|                  |                   /---------------------------------------------------------- Elephant
+|                  |                   |
+|                  |                   +---------------------------------------------------------- Aardvark
+|                  |                   |
+|                  |                   |                                      /------------------- Tenrec
+\------------------+                   +--------------------------------------+
+                   |                   |                                      \------------------- Armadillo
+                   |                   |
+                   |                   +---------------------------------------------------------- Sloth
+                   |                   |
+                   |                   +---------------------------------------------------------- Human
+                   |                   |
+                   |                   +---------------------------------------------------------- Tree shrew
+                   |                   |
+                   \-------------------+---------------------------------------------------------- Rabbit
+                                       |
+                                       +---------------------------------------------------------- Mouse
+                                       |
+                                       +---------------------------------------------------------- Hedgehog
+                                       |
+                                       |                  /--------------------------------------- Flying fox
+                                       |                  |
+                                       +------------------+                   /------------------- Pig
+                                       |                  \-------------------+
+                                       |                                      \------------------- Whale
+                                       |
+                                       |                                      /------------------- Cat
+                                       \--------------------------------------+
+                                                                              \------------------- Dog
+
+paup> savetree file=hsearch.tre brlen=yes
+
+2 trees saved to file "~/EEOB563/labs/2/hsearch.tre"
+
+paup> ?savetree
+
+Error(#152): Command "?savetree" is unrecognized.
+                 If it is spelled correctly, look for problems in a previous command, such as an
+                 unintentional semicolon.
+
+paup> savetree ?
+
+Usage: SaveTrees [options...];
+
+Available options:
+
+Keyword ------- Option type -------------------------------------- Current setting -----------------
+file            <output-treefile-name>                             hsearch.tre
+format          Nexus|altNexus|Freqpars|Newick|Hennig|Phylip       Nexus
+root            no|yes                                             no
+treeWts         no|yes                                             no
+brLens          no|yes|user                                        yes
+taxaBlk         no|yes                                             no
+setStoreCmd     no|yes                                             no
+supportValues   no|brlens|nodeLabels|Both                          brlens
+maxDecimals     <integer-value>                                    6
+trees           all|firstOnly                                      (none)
+from            <integer-value>                                    (none)
+to              <integer-value>                                    (none)
+prefix          <tree-name-prefix>                                 (none)
+replace         no|yes                                            *no
+append          no|yes                                            *no
+                                                                  *Option is nonpersistent
+
+paup> cleartrees
+
+All trees have been cleared from memory.
+
+paup> log stop
