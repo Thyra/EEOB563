@@ -1,0 +1,80 @@
+---
+title: 'EEOB563 -- Assignment #3'
+author: "Dennis Psaroudakis"
+date: "February 20th 2019"
+output:
+  pdf_document:
+    dev: pdf
+    latex_engine: lualatex
+    md_extensions: +link_attributes+multiline_tables
+    pandoc_args: --listings
+mainfontoptions: Numbers=OldStyle
+monofont: Linux Libertine Mono O
+mainfont: Linux Libertine O
+papersize: letter
+sansfont: Linux Biolinum O
+language: en-US
+titlepage: true
+...
+
+## 3
+c) I did an alltree search on the sequences and this is the result
+
+```
+Exhaustive search settings:
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 30 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        22 characters are constant (proportion = 0.733333)
+        6 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 2
+    Gaps are treated as "missing"
+  Initial 'Maxtrees' setting = 100
+  Branches collapsed (creating polytomies) if maximum branch length is zero
+  'MulTrees' option in effect
+  No topological constraints in effect
+  Trees are unrooted
+
+Exhaustive search completed:
+  Number of trees evaluated = 2027025
+  Score of best tree found = 11
+  Score of worst tree found = 16
+  Number of trees retained = 3
+  Time used = 0.54 sec (CPU time = 0.54 sec)
+```
+So the best score is 11, according to PAUP. I don't know why it is so different from my score, but I guess it just uses a different algorithm and/or different values in the algorithm. The best tree it found looks like this:
+
+```
+Tree 3 (rooted using default outgroup)
+
+Tree length = 11
+Consistency index (CI) = 1.0000
+Homoplasy index (HI) = 0.0000
+CI excluding uninformative characters = 1.0000
+HI excluding uninformative characters = 0.0000
+Retention index (RI) = 1.0000
+Rescaled consistency index (RC) = 1.0000
+
+/----------------------------------------------------------------------------------------------------------------------------------------- Dolphin
+|
+|                                                          /--------------------------------------- Hippopotamus
+|                                                          |
+|                                                          |                                      /--------------------------------------- Cow
+|                   /-------------------------------------13                                      |
+|                   |                                      +-------------------------------------11--------------------------------------- Giraffe
+|                   |                                      |                                      |
+|                   |                                     12                                      \--------------------------------------- Goat
+|                   |                                      |
+|                   |                                      \--------------------------------------- Sheep
+|                   |
+\------------------14 Camel
+                    |
+                    + Sperm whale
+                    |
+                    + Blue whale
+                    |
+                    \ Pig
+```
+Please look at my paup log file for additional info, here is also the FASTA file I wrote and the Nexus file I generated from it.

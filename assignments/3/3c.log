@@ -1,0 +1,288 @@
+
+P A U P *
+Version 4.0a (build 164) for Unix/Linux (built on Nov  1 2018 at 23:10:44)
+Wed Feb 20 20:15:14 2019
+
+
+paup> ToNexus format=FASTA fromFile=3.fa toFile=3.nxs
+
+File "~/EEOB563/assignments/3/3.fa" (FASTA format) converted to NEXUS-format file
+"~/EEOB563/assignments/3/3.nxs"
+
+paup> edit 3.nxs
+
+paup> exec 3.nxs
+
+Processing of file "~/EEOB563/assignments/3/3.nxs" begins...
+
+FASTA file "~/EEOB563/assignments/3/3.fa"
+  (imported Wed Feb 20 20:15:57 2019)
+
+Data read in nucleotide format
+
+Data matrix has 10 taxa, 30 characters
+Valid character-state symbols: ACGT
+Missing data identified by '?'
+Gaps identified by '-'
+"Equate" macros in effect:
+   R,r ==> {AG}
+   Y,y ==> {CT}
+   M,m ==> {AC}
+   K,k ==> {GT}
+   S,s ==> {CG}
+   W,w ==> {AT}
+   H,h ==> {ACT}
+   B,b ==> {CGT}
+   V,v ==> {ACG}
+   D,d ==> {AGT}
+   N,n ==> {ACGT}
+
+Processing of input file "3.nxs" completed.
+
+paup> AllTrees
+
+Exhaustive search settings:
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 30 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        22 characters are constant (proportion = 0.733333)
+        6 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 2
+    Gaps are treated as "missing"
+  Initial 'Maxtrees' setting = 100
+  Branches collapsed (creating polytomies) if maximum branch length is zero
+  'MulTrees' option in effect
+  No topological constraints in effect
+  Trees are unrooted
+
+Exhaustive search completed:
+  Number of trees evaluated = 2027025
+  Score of best tree found = 11
+  Score of worst tree found = 16
+  Number of trees retained = 3
+  Time used = 0.54 sec (CPU time = 0.54 sec)
+
+Frequency distribution of tree scores:
+
+        mean=14.924076 sd=1.032670 g1=-0.779325 g2=0.134726
+11.000 /-----------------------------------------------------------------------------------
+11.250 | (3465)
+11.500 | (0)
+11.750 | (0)
+12.000 | (0)
+12.250 |##### (45090)
+12.500 | (0)
+12.750 | (0)
+13.000 | (0)
+13.250 |############### (131490)
+13.500 | (0)
+13.750 | (0)
+14.000 | (0)
+14.250 |##################################################### (463950)
+14.500 | (0)
+14.750 | (0)
+15.000 | (0)
+15.250 |############################################################################ (660870)
+15.500 | (0)
+15.750 | (0)
+16.000 |################################################################################### (722160)
+       \-----------------------------------------------------------------------------------
+
+paup> showtrees all
+
+Note: No outgroup has been defined; trees are (arbitrarily) rooted at first taxon.
+
+Tree 1 (rooted using default outgroup)
+
+/-------------------------------------------------------------------------------------- Dolphin
+|
+|                     /---------------------------------------------------------------- Hippopotamus
+|                     |
+|                     +---------------------------------------------------------------- Camel
+|                     |
+|                     |                                          /--------------------- Cow
+|                     |                                          |
+|                     |                    /---------------------+--------------------- Giraffe
+|                     |                    |                     |
+\---------------------+--------------------+                     \--------------------- Goat
+                      |                    |
+                      |                    \------------------------------------------- Sheep
+                      |
+                      +---------------------------------------------------------------- Sperm whale
+                      |
+                      +---------------------------------------------------------------- Blue whale
+                      |
+                      \---------------------------------------------------------------- Pig
+
+Tree 2 (rooted using default outgroup)
+
+/-------------------------------------------------------------------------------------- Dolphin
+|
+|                                          /------------------------------------------- Hippopotamus
+|                                          |
+|                                          |                     /--------------------- Cow
+|                                          |                     |
+|                     /--------------------+---------------------+--------------------- Giraffe
+|                     |                    |                     |
+|                     |                    |                     \--------------------- Goat
+|                     |                    |
+|                     |                    \------------------------------------------- Sheep
+|                     |
+\---------------------+---------------------------------------------------------------- Camel
+                      |
+                      +---------------------------------------------------------------- Sperm whale
+                      |
+                      +---------------------------------------------------------------- Blue whale
+                      |
+                      \---------------------------------------------------------------- Pig
+
+Tree 3 (rooted using default outgroup)
+
+/-------------------------------------------------------------------------------------- Dolphin
+|
+|                                 /---------------------------------------------------- Hippopotamus
+|                                 |
+|                                 |                                  /----------------- Cow
+|                /----------------+                                  |
+|                |                |                 /----------------+----------------- Giraffe
+|                |                |                 |                |
+|                |                \-----------------+                \----------------- Goat
+|                |                                  |
+|                |                                  \---------------------------------- Sheep
+|                |
+\----------------+--------------------------------------------------------------------- Camel
+                 |
+                 +--------------------------------------------------------------------- Sperm whale
+                 |
+                 +--------------------------------------------------------------------- Blue whale
+                 |
+                 \--------------------------------------------------------------------- Pig
+
+paup> pscores
+
+Lengths of trees in memory:
+  Character-status summary:
+    Of 30 total characters:
+      All characters are of type 'unord'
+      All characters have equal weight
+      22 characters are constant (proportion = 0.733333)
+      6 variable characters are parsimony-uninformative
+      Number of parsimony-informative characters = 2
+  Gaps are treated as "missing"
+
+Tree #     1    2    3
+Length    11   11   11
+
+paup> describe/plot=p
+
+Tree description:
+
+  Unrooted tree(s) rooted using outgroup method
+
+  Note: No outgroup has been defined; trees are (arbitrarily) rooted at first taxon.
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 30 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        22 characters are constant (proportion = 0.733333)
+        6 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 2
+    Gaps are treated as "missing"
+    Character-state optimization: Accelerated transformation (ACCTRAN)
+
+Tree 1 (rooted using default outgroup)
+
+Tree length = 11
+Consistency index (CI) = 1.0000
+Homoplasy index (HI) = 0.0000
+CI excluding uninformative characters = 1.0000
+HI excluding uninformative characters = 0.0000
+Retention index (RI) = 1.0000
+Rescaled consistency index (RC) = 1.0000
+
+/----------------------------------------------------------------------------------------------------------------------------------------- Dolphin
+|
+|                   /--------------------------------------- Hippopotamus
+|                   |
+|                   + Camel
+|                   |
+|                   |                                                                             /--------------------------------------- Cow
+|                   |                                                                             |
+|                   |                                      /-------------------------------------11--------------------------------------- Giraffe
+|                   |                                      |                                      |
+\------------------13-------------------------------------12                                      \--------------------------------------- Goat
+                    |                                      |
+                    |                                      \--------------------------------------- Sheep
+                    |
+                    + Sperm whale
+                    |
+                    + Blue whale
+                    |
+                    \ Pig
+
+Tree 2 (rooted using default outgroup)
+
+Tree length = 11
+Consistency index (CI) = 1.0000
+Homoplasy index (HI) = 0.0000
+CI excluding uninformative characters = 1.0000
+HI excluding uninformative characters = 0.0000
+Retention index (RI) = 1.0000
+Rescaled consistency index (RC) = 1.0000
+
+/----------------------------------------------------------------------------------------------------------------------------------------- Dolphin
+|
+|                                                          /--------------------------------------- Hippopotamus
+|                                                          |
+|                                                          |                                      /--------------------------------------- Cow
+|                                                          |                                      |
+|                   /-------------------------------------12-------------------------------------11--------------------------------------- Giraffe
+|                   |                                      |                                      |
+|                   |                                      |                                      \--------------------------------------- Goat
+|                   |                                      |
+|                   |                                      \--------------------------------------- Sheep
+|                   |
+\------------------13 Camel
+                    |
+                    + Sperm whale
+                    |
+                    + Blue whale
+                    |
+                    \ Pig
+
+Tree 3 (rooted using default outgroup)
+
+Tree length = 11
+Consistency index (CI) = 1.0000
+Homoplasy index (HI) = 0.0000
+CI excluding uninformative characters = 1.0000
+HI excluding uninformative characters = 0.0000
+Retention index (RI) = 1.0000
+Rescaled consistency index (RC) = 1.0000
+
+/----------------------------------------------------------------------------------------------------------------------------------------- Dolphin
+|
+|                                                          /--------------------------------------- Hippopotamus
+|                                                          |
+|                                                          |                                      /--------------------------------------- Cow
+|                   /-------------------------------------13                                      |
+|                   |                                      +-------------------------------------11--------------------------------------- Giraffe
+|                   |                                      |                                      |
+|                   |                                     12                                      \--------------------------------------- Goat
+|                   |                                      |
+|                   |                                      \--------------------------------------- Sheep
+|                   |
+\------------------14 Camel
+                    |
+                    + Sperm whale
+                    |
+                    + Blue whale
+                    |
+                    \ Pig
+
+paup> q
+
+Warning: there are unsaved trees.  Do you want to quit anyway? (Y/n)Y
