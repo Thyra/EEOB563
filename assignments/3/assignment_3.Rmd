@@ -7,7 +7,7 @@ output:
     dev: pdf
     latex_engine: lualatex
     md_extensions: +link_attributes+multiline_tables
-    pandoc_args: --listings
+    pandoc_args: --listings --colorlinks
 mainfontoptions: Numbers=OldStyle
 monofont: Linux Libertine Mono O
 mainfont: Linux Libertine O
@@ -86,6 +86,10 @@ I aligned the sequences with Pal2Nal (vertebrate table, output format FASTA, I t
 Please look at the complete log file of the analysis [here](https://github.com/Thyra/EEOB563/blob/master/assignments/3/4.log). All the trees that were found had a very similar score and only marginally different topologie, the run with 100 reps was the most different from the rest. It reminds me of the trees I did by hand where I also found the best tree very early. So either this is just the global optimum and very easy to find or it is a local optimum and none of the methods were thorough enough to find the global optimum.
 
 ## 5
+I used the mafft alignment for this one because I somehow didn't trust the Pal2Nal result. No, the trees are not the same:
 
+![Majority consensus tree](majTree.png){width=60%}
 
+![Strict consensus tree](strictTree.png){width=60%}
 
+Their topology is different and even more importantly the majority consensus tree contains distances while the strict consensus tree does not.
