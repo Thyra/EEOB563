@@ -77,4 +77,15 @@ Rescaled consistency index (RC) = 1.0000
                     |
                     \ Pig
 ```
-Please look at my paup log file for additional info, here is also the FASTA file I wrote and the Nexus file I generated from it.
+Please look at my [paup log](https://github.com/Thyra/EEOB563/blob/master/assignments/3/3c.log) file for additional info, here is also the [FASTA file](https://github.com/Thyra/EEOB563/blob/master/assignments/3/3.fa) I wrote and the [Nexus file](https://github.com/Thyra/EEOB563/blob/master/assignments/3/3.nxs) I generated from it.
+
+# Part II
+I aligned the sequences with Pal2Nal (vertebrate table, output format FASTA, I told it to remove gaps, otherwise elephant and human were shorter than the others. Otherwise I left the standard options), I got a lot of warnings that I does not correspond to ATA but it seems like it worked ([result file](https://github.com/Thyra/EEOB563/blob/master/assignments/3/cob_aligned.fa)). I converted it into a [Nexus file](https://github.com/Thyra/EEOB563/blob/master/assignments/3/cob_aligned.nxs).
+
+## 4
+Please look at the complete log file of the analysis [here](https://github.com/Thyra/EEOB563/blob/master/assignments/3/4.log). All the trees that were found had a very similar score and only marginally different topologie, the run with 100 reps was the most different from the rest. It reminds me of the trees I did by hand where I also found the best tree very early. So either this is just the global optimum and very easy to find or it is a local optimum and none of the methods were thorough enough to find the global optimum.
+
+## 5
+
+
+

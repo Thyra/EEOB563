@@ -1,0 +1,35 @@
+
+P A U P *
+Version 4.0a (build 164) for Unix/Linux (built on Nov  1 2018 at 23:10:44)
+Wed Feb 20 21:11:16 2019
+
+
+paup> exec cob_aligned.nxs 
+
+Processing of file "~/EEOB563/assignments/3/cob_aligned.nxs" begins...
+
+FASTA file "~/EEOB563/assignments/3/cob_aligned.fa"
+  (imported Wed Feb 20 21:01:01 2019)
+
+Data read in nucleotide format
+
+Data matrix has 20 taxa, 1098 characters
+Valid character-state symbols: ACGT
+Missing data identified by '?'
+Gaps identified by '-'
+"Equate" macros in effect:
+   R,r ==> {AG}
+   Y,y ==> {CT}
+   M,m ==> {AC}
+   K,k ==> {GT}
+   S,s ==> {CG}
+   W,w ==> {AT}
+   H,h ==> {ACT}
+   B,b ==> {CGT}
+   V,v ==> {ACG}
+   D,d ==> {AGT}
+   N,n ==> {ACGT}
+
+Processing of input file "cob_aligned.nxs" completed.
+
+paup> q

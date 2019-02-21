@@ -1,0 +1,17 @@
+#NEXUS 
+
+Begin trees;  [Treefile saved Wed Feb 20 21:25:50 2019]
+[!
+>Consensus of 291 trees
+>
+>Source of trees from which consensus(es) calculated...
+>
+>Processing TREES block from file: ~/EEOB563/assignments/3/cob_aligned_mafft.fa.tree
+>  Keeping: trees from file (replacing any trees already in memory)
+>
+>  291 trees read from file
+>
+>  Time used = 7.05 sec (CPU time = 0.00 sec)
+]
+	tree Strict = [&U] (Platypus,Echidna,(Opossum,Wallaby,Bandicoot,Elephant,Aardvark,Tenrec,Sloth,Armadillo,Human,Tree_shrew,Rabbit,Mouse,Hedgehog,Flying_fox,Cat,Dog,Pig,Whale));
+end;
