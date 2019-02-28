@@ -1,0 +1,95 @@
+
+  20 Populations
+
+Neighbor-Joining/UPGMA method version 3.697
+
+
+ Neighbor-joining method
+
+ Negative branch lengths allowed
+
+
+  +-----Echidna   
+  ! 
+  !       +-------Opossum   
+  !     +-2 
+  !   +-3 +------Bandicoot 
+  !   ! ! 
+  !   ! +------Wallaby   
+  !   ! 
+  1---6  +-------Mouse     
+  !   !  !  
+  !   !  !    +---------Tenrec    
+  !   +-10  +-7 
+  !      !  ! +-----------Hedgehog  
+  !      !  !  
+  !      !  !     +----------Elephant  
+  !      +-12  +-11  
+  !         !  !  ! +---------Sloth     
+  !         !  !  +-5 
+  !         !  !    +------Armadillo 
+  !         !  !  
+  !         +-17     +-------Aardvark  
+  !            !  +-13  
+  !            !  !  +--------Rabbit    
+  !            !  !  
+  !            +-18    +---------Human     
+  !               !  +-9 
+  !               !  ! +------Cat       
+  !               !  !  
+  !               +-16     +--------Tree_shrew
+  !                  !  +-14  
+  !                  !  !  +------Dog       
+  !                  +-15  
+  !                     ! +------Flying_fox
+  !                     +-8 
+  !                       ! +-----Pig       
+  !                       +-4 
+  !                         +-------Whale     
+  ! 
+  +------Platypus  
+
+
+remember: this is an unrooted tree!
+
+Between        And            Length
+-------        ---            ------
+   1          Echidna         0.10140
+   1             6            0.07430
+   6             3            0.02015
+   3             2            0.00203
+   2          Opossum         0.13656
+   2          Bandicoot       0.12023
+   3          Wallaby         0.12363
+   6            10            0.01046
+  10          Mouse           0.12929
+  10            12            0.00558
+  12             7            0.01194
+   7          Tenrec          0.16498
+   7          Hedgehog        0.19056
+  12            17            0.00753
+  17            11            0.00711
+  11          Elephant        0.18500
+  11             5            0.01430
+   5          Sloth           0.16007
+   5          Armadillo       0.11357
+  17            18            0.00123
+  18            13            0.00580
+  13          Aardvark        0.12615
+  13          Rabbit          0.13760
+  18            16            0.00380
+  16             9            0.01109
+   9          Human           0.17568
+   9          Cat             0.11754
+  16            15            0.00358
+  15            14            0.00216
+  14          Tree_shrew      0.15473
+  14          Dog             0.13232
+  15             8            0.01146
+   8          Flying_fox      0.12206
+   8             4            0.01648
+   4          Pig             0.09636
+   4          Whale           0.12487
+   1          Platypus        0.11441
+
+

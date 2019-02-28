@@ -1,0 +1,35 @@
+
+   5 Populations
+
+Neighbor-Joining/UPGMA method version 3.697
+
+
+ Neighbor-joining method
+
+ Negative branch lengths allowed
+
+
+    +----Cat       
+  +-1 
+  ! +-Pig       
+  ! 
+  ! +-----Mouse     
+  3-2 
+  ! +-----------------Human     
+  ! 
+  +-Dog       
+
+
+remember: this is an unrooted tree!
+
+Between        And            Length
+-------        ---            ------
+   3             1            0.03399
+   1          Cat             0.07454
+   1          Pig             0.03278
+   3             2            0.00720
+   2          Mouse           0.09753
+   2          Human           0.28559
+   3          Dog             0.03941
+
+
