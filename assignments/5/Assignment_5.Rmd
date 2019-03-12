@@ -1,0 +1,6 @@
+3
+F84 is not available in raxml, so I'm using F81
+Raxml: Final LogLikelihood -54568.308901
+FastMe: Final LogLikelihood -54674.432495
+
+4

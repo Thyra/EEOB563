@@ -1,0 +1,79 @@
+
+RAxML-NG v. 0.8.0 BETA released on 11.01.2019 by The Exelixis Lab.
+Authors: Alexey Kozlov, Alexandros Stamatakis, Diego Darriba, Tomas Flouri, Benoit Morel.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+WARNING: This is a BETA release, please use at your own risk!
+
+RAxML-NG was called at 12-Mar-2019 12:34:18 as follows:
+
+raxml-ng --evaluate --msa ../alignment.phy --model F81 --tree alignment.phy_fastme_tree.txt
+
+Analysis options:
+  run mode: Evaluate tree likelihood
+  start tree(s): user
+  random seed: 1552412058
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX
+  parallelization: PTHREADS (8 threads), thread pinning: OFF
+
+[00:00:01] Reading alignment from file: ../alignment.phy
+[00:00:01] Loaded alignment with 20 taxa and 4482 sites
+
+Alignment comprises 1 partitions and 2114 patterns
+
+Partition 0: noname
+Model: F81+FO
+Alignment sites / patterns: 4482 / 2114
+Gaps: 6.81 %
+Invariant sites: 1.18 %
+
+
+NOTE: Binary MSA file created: ../alignment.phy.raxml.rba
+
+
+WARNING: You might be using too many threads (8) for your alignment with 2114 unique patterns.
+NOTE:    For the optimal throughput, please consider using fewer threads 
+NOTE:    and parallelize across starting trees/bootstrap replicates.
+NOTE:    As a general rule-of-thumb, please assign at least 200-1000 alignment patterns per thread.
+
+[00:00:01] Loading user starting tree(s) from: alignment.phy_fastme_tree.txt
+[00:00:01] Data distribution: max. partitions/sites/weight per thread: 1 / 265 / 1060
+
+Evaluating 1 trees
+
+[00:00:01] Tree #1, initial LogLikelihood: -56557.285943
+
+[00:00:01 -56557.285943] Initial branch length optimization
+[00:00:03 -55897.131016] Model parameter optimization (eps = 0.100000)
+
+[00:00:03] Tree #1, final logLikelihood: -54674.432495
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: NONE
+   Base frequencies (ML): 0.212000 0.283378 0.122730 0.381892 
+   Substitution rates (model): 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 
+
+Final LogLikelihood: -54674.432495
+
+AIC score: 109428.864990 / AICc score: 109429.603562 / BIC score: 109685.177976
+Free parameters (model + branch lengths): 40
+
+
+All optimized tree(s) saved to: /home/dpsaroud/EEOB563/assignments/5/alignment.phy.raxml.mlTrees
+Optimized model saved to: /home/dpsaroud/EEOB563/assignments/5/alignment.phy.raxml.bestModel
+
+Execution log saved to: /home/dpsaroud/EEOB563/assignments/5/alignment.phy.raxml.log
+
+Analysis started: 12-Mar-2019 12:34:18 / finished: 12-Mar-2019 12:34:25
+
+Elapsed time: 7.042 seconds
+
