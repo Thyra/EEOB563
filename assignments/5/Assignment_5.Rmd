@@ -1,6 +1,46 @@
-3
-F84 is not available in raxml, so I'm using F81
-Raxml: Final LogLikelihood -54568.308901
-FastMe: Final LogLikelihood -54674.432495
+## 3
+F84 is not available in raxml, so I'm using F81.
+The trees are not the same (see following tanglegram), they also have different log-likelihood scores:
 
-4
+```
+Raxml:  -54568.308901
+FastMe: -54674.432495
+```
+![Tanglegram made with Dendroscope](3/Tanglegram.png)
+
+## 4
+These are the two commands I used:
+
+```
+raxml-ng --search --msa ../alignment.phy --model model_codons --prefix codons --seed 12 --brlen scaled
+raxml-ng --search --msa ../alignment.phy --model model_genes --prefix genes --seed 12 --brlen scaled
+```
+
+The two models looked like this:
+
+````
+model_codons:
+  GTR+G+FO, COBX=1-4482/3
+
+model_genes:
+  GTR+G+FO, cob=1-1248
+  GTR+G+FO, cox1=1249-2808
+  GTR+G+FO, cox2=2809-3543
+  GTR+G+FO, cox3=3544-4482
+```
+
+These are the log-likelihoods for the best tree:
+
+```
+Codons: -45373.634679
+Genes:  -45270.430490
+```
+
+They are much better than the original tree BUT the evolution models I used are different so I'm not sure if it's directly comparable.
+
+Anyway, here is the difference between the Gene partitioned tree and the original RaXML tree, they are very similar except for the rabbit:
+
+![Tanglegram made with Dendroscope](4/Genes_vs_3_raxml.png)
+
+## 5
+Unfortunately I can't do this part right now because HPC is having problems with slurm or something (I copied you on an email about this). I will resubmit this assignment including this part when it's fixed.
