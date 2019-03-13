@@ -67,7 +67,7 @@ Anyway, here is the difference between the Gene partitioned tree and the origina
 \clearpage
 
 ## 5
-I had problems with slurm so I couldn't start it until Tuesday evening, so it's still running. I will resubmit this assignment tomorrow with part 5 when it is done. I am expecting a runtime of $\ge$ 10 hours from what the others have told me, I don't remember the runtimes from the lab anymore.
+I had expected a runtime of $\ge$ 10 hours from what the others have told me, I don't remember the runtimes from the lab anymore. In reality, it only took about 6:30 hours though, so I was lucky.
 This is my slurm script:
 
 ```bash
@@ -87,3 +87,7 @@ cd /home/dpsaroud/EEOB563/assignments/5/5
 
 /home/dpsaroud/bin/raxml-ng --all --msa ../alignment.phy --model GTR+G --seed 12 --threads 16 --bs-metric fbp --bs-trees 1000
 ```
+
+Here is the tree, finally the tree is further away from the animals:
+
+![ML tree with bootstrap support values](5/BootstrapSupport.png)
