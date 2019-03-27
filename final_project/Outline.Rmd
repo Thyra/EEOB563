@@ -1,0 +1,70 @@
+---
+title: "Gene Function Phylogeny"
+author: "Dennis Psaroudakis"
+date: "March 26th 2019"
+keep_md: yes
+output:
+  tufte::tufte_handout:
+    latex_engine: xelatex
+    citation_package: natbib
+  tufte::tufte_html: default
+bibliography: outline-resources/bib.bib
+link-citations: yes
+classoption: justified
+language: en-US
+header-includes:
+  - \usepackage[osf]{libertine}
+  - \citestyle{plain}
+---
+
+```{r setup, include=FALSE}
+library(tufte)
+# invalidate cache when the tufte version changes
+knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tufte'))
+options(htmltools.dir.version = FALSE)
+```
+
+`r newthought("In my research,")` my colleagues and I have generated (or are currently generating) genome-wide functional annotation datasets for wheat, rice, cotton, soy, barley, and several maize genome assemblies using the Gene Ontology^[http://geneontology.org/].
+It would be interesting to find out whether a phylogenetic tree built on the functional annotation of the genes instead of the DNA sequence would yield a tree that is similar to the currently used tree for the evolutionary relationship between these species, i.e. whether their evolution can be retraced on a functional level.
+
+For now this is largely explorative and it is possible that I will discover interesting but different patterns than what I expected. Maybe it's also all just nonsense, we will find out.
+
+## Data
+The functional annotation data is being generated with the GOMAP pipeline^[see https://dill-picl.org/projects/gomap for more info and https://github.com/Dill-PICL/GOMAP-singularity for the source code] which uses several different approaches to predict the functions of all genes in a given genome (publication in the works, see [@maizeGAMER] for the precursor developed on maize).
+All datasets are or will be published at https://dill-picl.org/projects/gomap/gomap-datasets/ .
+
+## Method
+I am planning to build a distance matrix between all annotation sets using the hF~1~ metric defined in [@AIGO].
+hF~1~ is the harmonic mean of the hierarchical precision hPr and hierarchical recall hRc^[ The hF~1~ is basically the tree version of the regular [F~1~ score](https://en.wikipedia.org/wiki/F1_score).]: 
+$$\textrm{hF}_1 = 2 \cdot \frac{\textrm{hPr} \cdot \textrm{hRc}}{\textrm{hPr} + \textrm{hRc}}$$
+The hierarchical precision hPr is defined as follows:
+$$\textrm{hPr} = \frac{\textrm{predicted GO term} \cup \textrm{true GO term}}{\textrm{predicted GO term}}$$
+and the hierarchical recall correspondingly:
+\begin{marginfigure}
+\includegraphics{outline-resources/hF-graphical.png}
+\caption{\textbf{(Zoom in)}. Graphic of how hPr and hRc use the Gene Ontology tree to calculate the overlap of two GO terms (the ones marked with a leaf)}
+\label{fig:marburg_virus}
+\end{marginfigure}
+$$\textrm{hRc} = \frac{\textrm{predicted GO term} \cup \textrm{true GO term}}{\textrm{true GO term}}$$
+To go from single annotation hF~1~ scores, those are commonly averaged to get gene or annotation set wide hF~1~ metrics.
+$$\textrm{overall hF}_1 = \sum_{i=1}^{n} \frac{\textrm{hF}_i}{n}$$
+
+
+The regular use case is that you have one set of GO predictions and one set of experimentally deduced GO annotations for the same genome which you can use as a gold standard to evaluate the quality of your predictions (as we did in [@maizeGAMER]).
+In my case, I only want to compare two datasets without regards to any quality.
+Since hPr and hRc are both used in commutative contexts for the hF~1~ metric, I can treat either of the datasets as the gold standard and the other one as the prediction.
+So my hF score between sets $A$ and $B$^[$A,B \in$ \{wheat, rice, cotton, soy, barley, maize~1~, maize~2~...\}] would be:
+$$\textrm{hF}_{A,B} = 2 \cdot \frac{\frac{A \cup B}{A} \cdot \frac{A \cup B}{B}}{\frac{A \cup B}{A} + \frac{A \cup B}{B}}$$
+
+$\textrm{hF}_{A,B}$ will range between $0$ and $1$, with $1$ being the score for two completely identical datasets.
+To turn this into a distance $d_{A,B}$ I can simply subract it from $1$, making the distance between identical datasets $0$ and completely disjunct datasets $1$:
+$$d_{A,B} = 1 - \textrm{hF}_{A,B}$$
+
+Then finally I can apply Neighbor-Joining to the distance matrix I generated this way.
+
+## Approach
+In the initial attempt, I want to ignore any genes and simply look at all functions present in any gene within the genome.
+That means I will combine all gene GO trees of a species into one big species-wide function tree and compare these function trees.
+Possibly I will limit it to the *Molecular Function* aspect of the Gene Ontology or at least exclude *Cellular Component* because I don't expect that one plant species will have, e.g. a nucleus and the other ones don't.
+
+Then I'll see if what I have generated makes any sense and go from there.
