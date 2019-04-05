@@ -1,0 +1,29 @@
+#NEXUS
+[This file contains the trees that were found during the MCMC
+search, sorted by posterior probability. "p" indicates the
+posterior probability of the tree whereas "P" indicates the
+cumulative posterior probability.]
+
+begin trees;
+   translate
+    1 Ginkgo_biloba,
+    2 Araucaria_araucana,
+    3 Cedrus_deodara,
+    4 Cupressus_arizonica,
+    5 Juniperus_communis,
+    6 Pinus_densiflora,
+    7 Podocarpus_chinensis,
+    8 Sciadopitys_verticillata,
+    9 Taxus_baccata;
+   tree tree_1 [p = 0.728, P = 0.728] = [&W 0.728091] (((7,(8,(9,(5,4)))),2),(6,3),1);
+   tree tree_2 [p = 0.186, P = 0.914] = [&W 0.185938] (2,((7,(8,(9,(5,4)))),(6,3)),1);
+   tree tree_3 [p = 0.075, P = 0.989] = [&W 0.074642] ((7,(8,(9,(5,4)))),(2,(6,3)),1);
+   tree tree_4 [p = 0.005, P = 0.994] = [&W 0.004998] (7,((8,(9,(5,4))),(2,(6,3))),1);
+   tree tree_5 [p = 0.002, P = 0.995] = [&W 0.001666] (6,(((7,(8,(9,(5,4)))),2),3),1);
+   tree tree_6 [p = 0.002, P = 0.997] = [&W 0.001666] ((8,(9,(5,4))),(7,(2,(6,3))),1);
+   tree tree_7 [p = 0.001, P = 0.998] = [&W 0.001333] (((8,(9,(5,4))),(7,2)),(6,3),1);
+   tree tree_8 [p = 0.001, P = 0.999] = [&W 0.001000] ((6,((7,(8,(9,(5,4)))),2)),3,1);
+   tree tree_9 [p = 0.000, P = 1.000] = [&W 0.000333] (8,((9,(5,4)),(7,(2,(6,3)))),1);
+   tree tree_10 [p = 0.000, P = 1.000] = [&W 0.000167] ((7,2),((8,(9,(5,4))),(6,3)),1);
+   tree tree_11 [p = 0.000, P = 1.000] = [&W 0.000167] ((8,(9,(5,4))),((7,2),(6,3)),1);
+end;
