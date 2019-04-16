@@ -53,7 +53,9 @@ def tree_from_gaf(gaf_path : String, go : SlimOntology)
     csv.next
 
     while csv.next
-      if ["", "0"].includes?(csv.row[3]) && !tree.includes?(go_id = go.main_id_of csv.row[4]) # Ignore any annotations with modifier and any annotations that are already in the tree (if they are in their parents are in as well)
+      go_id = go.main_id_of csv.row[4]
+      if ["", "0"].includes?(csv.row[3]) && !tree.includes?(go_id) # Ignore any annotations with modifier and any annotations that are already in the tree (if they are in their parents are in as well)
+        # go_id = go_id.not_nil! # This is a bit annoying but otherwise the compiler complains
         if !go.is_obsolete?(go_id)
           tree << go_id
           tree.concat go.ancestors_of(go_id)
