@@ -1,5 +1,5 @@
 ---
-title: "Gene Function Phylogenetics"
+title: "Genome Function Phylogenetics"
 author: "Dennis Psaroudakis"
 date: "April 18th 2019"
 keep_md: yes
@@ -24,11 +24,12 @@ knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tufte'))
 options(htmltools.dir.version = FALSE)
 ```
 
-`r newthought("Introduction, Data...")` 
+`r newthought("Introduction, Gene Ontology, Data...")` 
 
 ## Method
-Starting point of our method is a functional annotation set for each genome $S_a$, consisting of tuples $(G_i, T_i)$ with $G_i \in$ Genes in genome $S_a$ and $T_i \in$ Terms in the Gene Ontology. So the annotation set maps each gene of the genome to $n$ GO terms.
-\marginnote[-4em]{
+Starting point of our method are the functional annotation sets, one for each genome, which annotate every gene in the genome with one or more GO terms.
+In more mathematical terms the genome annotation set is a list of tuples $(G, T)$ with $G \in$ Genes in that genome and $T \in$ Terms in the Gene Ontology.
+\marginnote[-5em]{
 \texttt{Gene\ \ \ \ \ \ \ \ \ GO Term\\
 Os01g0601625	GO:0050896\\
 Os01g0601625	GO:0016021\\
@@ -45,16 +46,24 @@ Os01g0601675	GO:0050789\\
 }
 }
 
-Now we use the structure of the Gene Ontology to obtain all ancestors $A_i$ of GO term $T_i$ in the GO hierarchy and combine all these annotations and their ancestors, irrespective of the Gene they are associated with: $\bigcup_{i=1}^{x}(T_i \cup A_{i})$ The resulting set is a set of all the GO terms present in the genome annotation and their ancestors.
+We can use the hierarchical structure of the Gene Ontology to obtain the ancestors $A_i$ of any term $T_i$; in other words the gene $G_i$ is not just annotated with the term $T_i$ itself but also with all GO terms that are a more general statement of that term (e.g. any gene that is part of a metabolic process is thereby also part of a biological process).
+We do that for all terms $T$ in the dataset and combine all of the terms and their ancestors into one big genome-wide set $S$, irrespectively of the gene they were originally associated with:  $S = \bigcup_{i=1}^{x}(T_i \cup A_{i})$.
 
-After this is done for all annotation sets, we introduce the Jaccard distance as a metric of (dis-)similarity between the annotation sets:
+When this superset of annotations is created for each of the datasets, we can use the Jaccard Distance as a measure of how (dis-)similar any two sets are from each other, or in biological terms how different the two genomes are on a functional level:
 
 $$ \textrm{Jaccard Distance}(S_a, S_b) = 1 - \frac{|S_a \cap S_b|}{|S_a \cup S_b|} $$
 
 \begin{marginfigure}
+The general idea of using the Jaccard Distance in this context is to measure the overlap of two subtrees in the GO hierarchy.
+Say, for simplicity, that we're looking at two genomes (here called Gold Standard and Prediction) that each only contain one single GO term (marked by a leaf).
+First, we add all ancestors of that leaf term to each subtree.
+Then, we determine the overlap (which corresponds to $S_a \cap S_b$), and divide the number of nodes in this overlap by the number of nodes in either of the two subtrees ($S_a \cup S_b$).
+\vspace{0.2em}
+
 \includegraphics{resources/hF-graphical.png}
-\caption{\textbf{(Zoom in)}. Graphic of how we use the Gene Ontology tree to calculate the overlap (= intersection) of two GO terms (the ones marked with a leaf)}
-\label{fig:marburg_virus}
+
+\vspace{0.5em}
+\noindent In the case of this example, the Jaccard Distance of Gold Standard and Prediction would be $1 - \frac{4}{9} = \frac{5}{9}$
 \end{marginfigure}
 
-Then finally I can apply Neighbor-Joining to the distance matrix I generated this way.
+Applying this formula to all pairwise combinations of the genomes we're looking at yields a $S \times S$ distance matrix that can then serve as the input for a neighbor joining algorithm.
