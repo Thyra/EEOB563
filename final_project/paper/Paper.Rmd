@@ -1,0 +1,60 @@
+---
+title: "Gene Function Phylogenetics"
+author: "Dennis Psaroudakis"
+date: "April 18th 2019"
+keep_md: yes
+output:
+  tufte::tufte_handout:
+    latex_engine: xelatex
+    citation_package: natbib
+  tufte::tufte_html: default
+bibliography: resources/bib.bib
+link-citations: yes
+classoption: justified
+language: en-US
+header-includes:
+  - \usepackage[osf]{libertine}
+  - \citestyle{plain}
+---
+
+```{r setup, include=FALSE}
+library(tufte)
+# invalidate cache when the tufte version changes
+knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tufte'))
+options(htmltools.dir.version = FALSE)
+```
+
+`r newthought("Introduction, Data...")` 
+
+## Method
+Starting point of our method is a functional annotation set for each genome $S_a$, consisting of tuples $(G_i, T_i)$ with $G_i \in$ Genes in genome $S_a$ and $T_i \in$ Terms in the Gene Ontology. So the annotation set maps each gene of the genome to $n$ GO terms.
+\marginnote[-4em]{
+\texttt{Gene\ \ \ \ \ \ \ \ \ GO Term\\
+Os01g0601625	GO:0050896\\
+Os01g0601625	GO:0016021\\
+Os01g0601625	GO:0016301\\
+Os01g0601651	GO:0003677\\
+Os01g0601651	GO:0009699\\
+Os01g0601651	GO:0050790\\
+Os01g0601651	GO:0050794\\
+Os01g0601651	GO:0050896\\
+Os01g0601675	GO:0007275\\
+Os01g0601675	GO:0016310\\
+Os01g0601675	GO:0050789\\
+...
+}
+}
+
+Now we use the structure of the Gene Ontology to obtain all ancestors $A_i$ of GO term $T_i$ in the GO hierarchy and combine all these annotations and their ancestors, irrespective of the Gene they are associated with: $\bigcup_{i=1}^{x}(T_i \cup A_{i})$ The resulting set is a set of all the GO terms present in the genome annotation and their ancestors.
+
+After this is done for all annotation sets, we introduce the Jaccard distance as a metric of (dis-)similarity between the annotation sets:
+
+$$ \textrm{Jaccard Distance}(S_a, S_b) = 1 - \frac{|S_a \cap S_b|}{|S_a \cup S_b|} $$
+
+\begin{marginfigure}
+\includegraphics{resources/hF-graphical.png}
+\caption{\textbf{(Zoom in)}. Graphic of how we use the Gene Ontology tree to calculate the overlap (= intersection) of two GO terms (the ones marked with a leaf)}
+\label{fig:marburg_virus}
+\end{marginfigure}
+
+Then finally I can apply Neighbor-Joining to the distance matrix I generated this way.
