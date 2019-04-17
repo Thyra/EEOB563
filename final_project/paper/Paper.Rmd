@@ -24,7 +24,24 @@ knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tufte'))
 options(htmltools.dir.version = FALSE)
 ```
 
-`r newthought("Introduction, Gene Ontology, Data...")` 
+`r newthought("When we build phylogenetic trees,")` we often use the sequences of certain genes as the basis for our tree.
+They are the direct substrate of evolution so that makes sense, but when we think of evolution on a macro level, we don't really think of the sequences, we think of phenotype.
+Using phenotypes for evolutionary trees is a hard thing to do though because the choice of characteristics can be kind of arbitrary (http://wiki.c2.com/?BorgesClassificationOfAnimals Chinesische Tiere (Jorge Luis Borges 1966)), because it is very far away from the material evolution actually happens on, i.e. DNA.
+In this paper, I tried to go a middle ground: Instead of looking at the genetic sequences or the macromolecular phenotype, I'm looking at the presence of certain biological processes, molecular functions, or cellular components, in other words: along the path of evolution, any meaningful change in an organism goes along with the development, change, or loss of such a function; what good is a change in the DNA sequence if it does not lead to a modified function of that gene?
+
+## Gene Ontology
+Historically, the function/role that a gene plays in an organism has always been described in natural language, however the researcher characterizing that gene deemed best.
+While this is nice to read, it is not very useful if you want to do computation on it, as computers are (still) horrible at understanding natural language and determining the structure in meaning behind these words.
+Additionally, different people will describe the same thing with different words, which has the potential for misunderstanding.
+lalala Gene Ontology
+\marginnote{"The mission of the GO Consortium is to develop an up-to-date, comprehensive, computational model of biological systems, from the molecular level to larger pathways, cellular and organism-level systems." 
+
+\raggedleft --- GO Consortium (geneontology.org)}
+The function/role that a gene plays in an organism can be quite a vague expression and if you look at papers doing research on these things, you will see that every researcher describes it differently.
+
+
+## Data
+The data that serve as the input for this project are functional annotation datasets in the GAF file format^[\scriptsize http://geneontology.org/docs/go-annotation-file-gaf-format-2.0/] which we generated with our GOMAP pipeline^[\scriptsize https://dill-picl.org/projects/gomap]. They are (or will be shortly) available from \scriptsize https://dill-picl.org/projects/gomap/gomap-datasets \normalsize.
 
 ## Method
 Starting point of our method are the functional annotation sets, one for each genome, which annotate every gene in the genome with one or more GO terms.
