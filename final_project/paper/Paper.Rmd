@@ -29,19 +29,44 @@ They are the direct substrate of evolution so that makes sense, but when we thin
 Using phenotypes for evolutionary trees is a hard thing to do though because the choice of characteristics can be kind of arbitrary (http://wiki.c2.com/?BorgesClassificationOfAnimals Chinesische Tiere (Jorge Luis Borges 1966)), because it is very far away from the material evolution actually happens on, i.e. DNA.
 In this paper, I tried to go a middle ground: Instead of looking at the genetic sequences or the macromolecular phenotype, I'm looking at the presence of certain biological processes, molecular functions, or cellular components, in other words: along the path of evolution, any meaningful change in an organism goes along with the development, change, or loss of such a function; what good is a change in the DNA sequence if it does not lead to a modified function of that gene?
 
-## Gene Ontology
+## The Gene Ontology
 Historically, the function/role that a gene plays in an organism has always been described in natural language, however the researcher characterizing that gene deemed best.
-While this is nice to read, it is not very useful if you want to do computation on it, as computers are (still) horrible at understanding natural language and determining the structure in meaning behind these words.
+While this is nice to read, it is not very useful if you want to do computation on it, as computers are (still) horrible at understanding natural language and determining the structure in meaning behind the words.
 Additionally, different people will describe the same thing with different words, which has the potential for misunderstanding.
-lalala Gene Ontology
-\marginnote{"The mission of the GO Consortium is to develop an up-to-date, comprehensive, computational model of biological systems, from the molecular level to larger pathways, cellular and organism-level systems." 
+
+Ontologies try to alleviate these problems by providing a strictly organized and controlled vocabulary and defined relationships between the terms, so that the same statement always means the same thing, no matter the context or the  author. Additionally, ontologies can be understood by computers if all relationships and terms are clearly defined.
+
+The Gene Ontology is such an ontology that describes genes by the properties of their product.
+\marginnote{"The mission of the GO Consortium is to develop an up-to-date, comprehensive, computational model of biological systems, from the molecular level to larger pathways, cellular and organism-level systems."
 
 \raggedleft --- GO Consortium (geneontology.org)}
-The function/role that a gene plays in an organism can be quite a vague expression and if you look at papers doing research on these things, you will see that every researcher describes it differently.
+In our case these gene products are proteins, and they can be characterized in three different aspects:
 
+- What biological processes is this protein part of? (e.g. photosynthesis or autophagy)
+- What molecular functions does the protein carry out? (e.g. ethylene binding or RNA ligation)
+- What cellular component is the protein active at? (e.g. outer membrane or nucleus)
+
+Within each of these aspects, the Gene Ontology defines a huge number of terms (2,675,070 in total), that range from very general to very specific:
+
+
+![subtree of the *Biological Process* ontology. 
+The terms are organized in such a way that more general terms are always true for any of their more specific child terms.
+For example, any protein that is part of *Cytokinesis after Meiosis I*, is also obviously part of Cytokinesis, the Cell Cycle etc.
+That way, a gene that has been annotated with the term *Cytokinesis after Meisosis I* (leaf term), has implicitly been annotated with all of that term's parent terms as well, all the way up to the root term.](resources/go_hierarchy_example.png){width=60%}
+
+\noindent When proteins are annotated with these terms instead of just natural language, we can now computationally answer some interesting questions, such as:
+
+- How similar in function is protein A to protein B? (One answer would be: How many steps in the GO graph do I need from term A to B? The fewer steps, the more similar the function)
+- If protein A is involved in Biological Process XYZ, what other proteins are involved in that same process?
+
+\noindent The Gene Ontology is quite well established in the field, so you will find GO annotations for almost all relevant UniProt entries or use dedicated tools like AmiGO or QuickGO to examine a protein of interest.
 
 ## Data
-The data that serve as the input for this project are functional annotation datasets in the GAF file format^[\scriptsize http://geneontology.org/docs/go-annotation-file-gaf-format-2.0/] which we generated with our GOMAP pipeline^[\scriptsize https://dill-picl.org/projects/gomap]. They are (or will be shortly) available from \scriptsize https://dill-picl.org/projects/gomap/gomap-datasets \normalsize.
+Annotating genes with their functions can be done experimentally (e.g. by knocking out a certain gene and seeing what processes in the cell are affected), but that is a time-consuming and expensive process, so methods have been developed that try and predict the function of a given gene.
+Our lab has developed such a pipeline called GOMAP which combines different prediction approaches and is able to generate high-confidence and very extensive Functional Annotations in a reproducible manner (CITE PAPER).
+We have been applying this pipeline to whole-genome assemblies of different plant species and generated functional annotations for every gene in each genome.
+These annotation sets are (or will be shortly) available from  
+\scriptsize https://dill-picl.org/projects/gomap/gomap-datasets \normalsize.
 
 ## Method
 Starting point of our method are the functional annotation sets, one for each genome, which annotate every gene in the genome with one or more GO terms.
@@ -83,4 +108,39 @@ Then, we determine the overlap (which corresponds to $S_a \cap S_b$), and divide
 \noindent In the case of this example, the Jaccard Distance of Gold Standard and Prediction would be $1 - \frac{4}{9} = \frac{5}{9}$
 \end{marginfigure}
 
-Applying this formula to all pairwise combinations of the genomes we're looking at yields a $S \times S$ distance matrix that can then serve as the input for a neighbor joining algorithm.
+Applying this formula to all pairwise combinations of the genomes we're looking at yields a $S \times S$ distance matrix that can then serve as the input for a neighbor joining algorithm (provided by PHYLIP).
+
+## Result
+
+The tree generated by neighbor joining is displayed in Figure \ref{fig:result}.
+4 of the 5 maize assemblies are grouped together in a clade, while the last one is an outlier to the remaining grasses and sits on a very long branch.
+In the remaining plants, cotton is an outlier to the legumes, which are all grouped in a single clade.
+
+\begin{figure*}[htbp]
+\includegraphics{resources/result.png}
+\caption{Resulting tree. maize\_v3 and maize\_v4 are two assemblies of the same maize cultivar, medicago1 and medicago2 are two different genotypes.}
+\label{fig:result}
+\end{figure*}
+
+## Discussion
+
+This tree shows surprising similarity to the taxonimic tree one might expect if it had been built on sequences^[I should probably display that expected tree here.].
+The maize cultivars are all grouped together and there's even the distinction between the non-stiff stalk (W22 and Mo17), iodent (Ph207), and stiff stalk (maize_v4) classes.
+Only maize_v3, which is the same cultivar as maize_v4 (B73) is waaaay out there where it probably doesn't belong.
+We're currently investigating this but it seems that there is a lot wrong with the genome assembly itself, which would naturally influence the functional annotations derived from it.
+
+## Reproducing the Tree
+To reproduce this tree, follow these steps on a Linux machine that has PHYLIP available:
+
+```bash
+git clone https://github.com/Thyra/EEOB563.git paper_dennis # Clone the repository
+cd paper_dennis/final_project # change into the directory
+./build_distance_matrix > infile
+module load phylip # (if you're on HPC)
+neighbor
+```
+
+\noindent The resulting tree is in `outtree`.
+Manually root it (e.g. with Dendrogram) outside of the grasses (maize, wheat, barley) and you should end up with the same tree.
+This will use the pre-summarized `.tree.json` files in annotation_sets, if you want to completely reproduce it from scratch, delete them and only leave the `.gaf.gz` files.
+But be warned, this will take a while to calculate (probably over two hours).
