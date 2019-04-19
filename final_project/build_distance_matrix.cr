@@ -69,12 +69,12 @@ end
 
 
 def load_or_create_tree(gaf_path : String, go : SlimOntology)
-  puts "Looking for tree #{gaf_path}"
+  STDERR.puts "Looking for tree #{gaf_path}"
   if File.exists? gaf_path + ".tree.json"
-    puts "  ..found!"
+    STDERR.puts "  ..found!"
     return Set.new(Array(String).from_json(File.read(gaf_path + ".tree.json")))
   else
-    puts "  ..not found, creating"
+    STDERR.puts "  ..not found, creating"
     tree = tree_from_gaf(gaf_path, go)
     File.write(gaf_path + ".tree.json", tree.to_json)
     return tree
@@ -94,12 +94,12 @@ gafs = Dir.glob("annotation_sets/*.gaf.gz")
 
 gafs[0..-2].each_with_index do | g1, i1 |
   # Load first genome
-  puts "Loading GAF #{g1}"
+  STDERR.puts "Loading GAF #{g1}"
   tree1 = load_or_create_tree(g1, go)
   n1 = File.basename(g1).split(".")[0..-3].join(".")
   gafs[i1+1..-1].each do | g2 |
     # Load second genome and compare
-    puts "Loading GAF #{g2}"
+    STDERR.puts "Loading GAF #{g2}"
     tree2 = load_or_create_tree(g2, go)
     n2 = File.basename(g2).split(".")[0..-3].join(".")
     distances[n1] = Hash(String, Float64).new unless distances.keys.includes? n1
@@ -124,3 +124,4 @@ gafs.each do | g1 |
   end
   print "\n"
 end
+STDERR.puts "Done."
