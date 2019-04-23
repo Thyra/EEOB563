@@ -1,0 +1,5 @@
+unique_terms set1 set2 # Should be A,C
+unique_terms set2 set1 # Should be D,F
+unique_terms intersection:set1,set2 set3 # Should be B
+unique_terms intersection:set1,set2 set4 # Should be nothing
+unique_terms union:set1,set2 intersection:set3,set4 # Should be A,B,D
