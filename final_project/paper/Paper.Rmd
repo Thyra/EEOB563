@@ -63,7 +63,7 @@ Additionally, different people will describe the same thing with different words
 
 Ontologies try to alleviate these problems by providing a strictly organized and controlled vocabulary and defined relationships between the terms, so that the same statement always means the same thing, no matter the context or the  author. Additionally, ontologies can be understood by computers if all relationships and terms are clearly defined.
 
-The Gene Ontology is such an ontology that describes genes by the properties of their product.
+The Gene Ontology (GO) is such an ontology that describes genes by the properties of their product.
 \marginnote{"The mission of the GO Consortium is to develop an up-to-date, comprehensive, computational model of biological systems, from the molecular level to larger pathways, cellular and organism-level systems."
 
 \raggedleft --- GO Consortium (geneontology.org)}
@@ -146,7 +146,7 @@ In the remaining plants, cotton is an outlier to the legumes, which are all grou
 
 \begin{figure*}[htbp]
 \includegraphics{resources/result.png}
-\caption{Resulting phylogram. maize\_v3 and maize\_v4 are two assemblies of the same maize cultivar, medicago1 and medicago2 are two different genotypes.}
+\caption{Phylogram built on the Jaccard distance matrix with Neighbor Joining. Manually rooted between monocots and dicots and text in green added.}
 \label{fig:result}
 \end{figure*}
 
@@ -169,6 +169,28 @@ As you will have noticed, this is all just a work in progress at the moment. My 
 - Are there any other taxa that would be good to have in the tree?
 - Is there any further analysis that would be good to do? (e.g. branch support, looking at each GO aspect separately, a more sophisticated measure of GAF similarity, trying a character state based method instead of distance...)
 - Is rooting the tree there reasonable?
+
+
+The tree is surprisingly similar to the taxonomic tree one might expect if it had been built on sequences^[I should probably display that expected tree here.], but why did it work so well?
+Given the number of taxa, it is unlikely that it is due to pure chance or noise but it is not clear whether this tree actually demonstrates a biologically meaningful difference in the functional annotations of these species or wehther it is simply a reproduction of some bias or artifact that stems from some element in the process.
+
+To further examine this question, I wanted to see where the phylogenetic signal actually comes from.
+So I asked the following question: Which terms are common to all nitrogen fixing plants but do not occur in any other plant in the tree?^[in mathy words this is the intersection of terms in the nitrogen fixing species minus the union of terms in all other species]
+If these terms are actually meaningful to the process of nitrogen fixation (or some other characteristic that clearly differentiates this group of plants from the others) that would indicate that the phylogenetic signal actually comes from biologically plausible differences in the functional annotations.
+So, here is the answer:
+
+- GO:0080184 - response to phenylpropanoid
+- GO:0033800 - isoflavone 7-O-methyltransferase activity
+- GO:0042577 - lipid phosphatase activity
+- GO:0031174 - lifelong otolith mineralization
+- GO:0045299 - otolith mineralization
+- GO:0006742 - NADP catabolic process
+- GO:0019364 - pyridine nucleotide catabolic process
+- GO:0019677 - NAD catabolic process
+- GO:0070823 - HDA1 complex
+
+Three of these terms do seem plausible: The Nod Factor molecule that is secreted by the plant as a signal to Rhizobia bacteria is a phenylpropanoid, isoflavone 7-O-methyltransferase activity is involved in Nod Factor synthesis, and the nodule has a complex lipid membrane system – and Nod Factor has a lipid component (which could explain lipid phosphatase activity).
+The last 4 terms are possibly plausible, but less certain, but the two otolith terms seem very out of place, since they describe small oval calcareous bodies in the inner ear of vertebrates, not something expected to be found in legumes.
 
 ## Reproducing the Tree
 To reproduce this tree, follow these steps on a Linux machine that has PHYLIP available:
