@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.2.27)  24 APR 2019 14:52
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.2.27)  25 APR 2019 17:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1692,17 +1692,11 @@ Requested font "cmr6" at 6.0pt
 LaTeX Warning: Marginpar on page 1 moved.
 
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 160.
+(Font)              scaled to size 12.0pt on input line 160.
 Requested font "[LinLibertine_R.otf]/OT:script=latn;language=DFLT;+tnum;+onum;m
-apping=tex-text;" at 10.95pt
+apping=tex-text;" at 12.0pt
  -> /usr/local/texlive/2018/texmf-dist/fonts/opentype/public/libertine/LinLiber
 tine_R.otf
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 160.
-Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=DFLT;+tnum;+onum;
-mapping=tex-text;" at 10.95pt
- -> /usr/local/texlive/2018/texmf-dist/fonts/opentype/public/libertine/LinLiber
-tine_RI.otf
 
 LaTeX Warning: Marginpar on page 1 moved.
 
@@ -1773,8 +1767,20 @@ Requested font "[LinLibertine_R.otf]/OT:script=latn;language=DFLT;letterspace=1
  -> /usr/local/texlive/2018/texmf-dist/fonts/opentype/public/libertine/LinLiber
 tine_R.otf
 [2]
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
+(Font)              scaled to size 10.95pt on input line 257.
+Requested font "[LinLibertine_R.otf]/OT:script=latn;language=DFLT;+tnum;+onum;m
+apping=tex-text;" at 10.95pt
+ -> /usr/local/texlive/2018/texmf-dist/fonts/opentype/public/libertine/LinLiber
+tine_R.otf
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
+(Font)              scaled to size 10.95pt on input line 257.
+Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=DFLT;+tnum;+onum;
+mapping=tex-text;" at 10.95pt
+ -> /usr/local/texlive/2018/texmf-dist/fonts/opentype/public/libertine/LinLiber
+tine_RI.otf
 LaTeX Font Info:    Font shape `TU/LinLibertine(5)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 273.
+(Font)              scaled to size 8.0pt on input line 278.
 Requested font "[LinLibertine_M.otf]/OT:script=latn;language=DFLT;" at 8.0pt
  -> /usr/local/texlive/2018/texmf-dist/fonts/opentype/public/libertine/LinLiber
 tine_M.otf
@@ -1784,67 +1790,91 @@ LaTeX Warning: Marginpar on page 3 moved.
 File: resources/hF-graphical.png Graphic file (type bmp)
 <resources/hF-graphical.png>
 
-Overfull \hbox (5.99503pt too wide) in paragraph at lines 299--300
+Overfull \hbox (5.99503pt too wide) in paragraph at lines 304--305
 [][] 
  []
 
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 326.
+
+LaTeX Font Info:    Font shape `TU/LinLibertine(5)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 335.
+Requested font "[LinLibertine_M.otf]/OT:script=latn;language=DFLT;" at 10.0pt
+ -> /usr/local/texlive/2018/texmf-dist/fonts/opentype/public/libertine/LinLiber
+tine_M.otf
+[3]
 File: resources/result.png Graphic file (type bmp)
 <resources/result.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--323
+Underfull \hbox (badness 10000) in paragraph at lines 345--348
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--323
+Underfull \hbox (badness 10000) in paragraph at lines 345--348
+
+ []
+
+File: resources/parsimonyTree.png Graphic file (type bmp)
+<resources/parsimonyTree.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--354
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--354
+
+ []
+
+File: resources/tanglegram.png Graphic file (type bmp)
+<resources/tanglegram.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--363
 
  []
 
 
-LaTeX Warning: Marginpar on page 3 moved.
+LaTeX Warning: Marginpar on page 4 moved.
 
-[3] [4]
-LaTeX Font Info:    Font shape `TU/LinLibertine(5)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 377.
-Requested font "[LinLibertine_M.otf]/OT:script=latn;language=DFLT;" at 10.0pt
- -> /usr/local/texlive/2018/texmf-dist/fonts/opentype/public/libertine/LinLiber
-tine_M.otf
+[4] [5]
+
+LaTeX Warning: Marginpar on page 6 moved.
+
+
+LaTeX Warning: Marginpar on page 6 moved.
+
+[6]
 LaTeX Font Info:    Font shape `TU/LinLibertine(5)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 378.
+(Font)              scaled to size 10.0pt on input line 471.
 Requested font "[LinLibertine_MO.otf]/OT:script=latn;language=DFLT;" at 10.0pt
  -> /usr/local/texlive/2018/texmf-dist/fonts/opentype/public/libertine/LinLiber
 tine_MO.otf
-(./Paper.bbl
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1.
-Requested font "[LinLibertine_R.otf]/OT:script=latn;language=DFLT;+tnum;+onum;m
-apping=tex-text;" at 12.0pt
- -> /usr/local/texlive/2018/texmf-dist/fonts/opentype/public/libertine/LinLiber
-tine_R.otf
-[5]
+(./Paper.bbl [7]
 Underfull \hbox (badness 1661) in paragraph at lines 70--77
 []\TU/LinLibertine(0)/m/n/10 Chengsheng Zhu, Tom O. Delmont, Timothy M. Vogel, 
 and Yana
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 398.
-[6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 398.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 491.
+[8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 491.
 (./Paper.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 398.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 398.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 491.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 491.
 Package rerunfilecheck Info: File `Paper.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 398.
+(rerunfilecheck)             Checksum: 94CC2D7CE7CBA278F763009A792D0863.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 491.
  ) 
 Here is how much of TeX's memory you used:
- 34313 strings out of 492933
- 669143 string characters out of 6133145
- 698074 words of memory out of 5000000
- 37983 multiletter control sequences out of 15000+600000
+ 34332 strings out of 492933
+ 669475 string characters out of 6133145
+ 700596 words of memory out of 5000000
+ 37999 multiletter control sequences out of 15000+600000
  539033 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  61i,11n,107p,1130b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Paper.pdf (6 pages).
+Output written on Paper.pdf (8 pages).

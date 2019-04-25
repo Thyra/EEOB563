@@ -56,7 +56,7 @@ In this paper, I'm going to do something slightly similar. Not on bacteria, but 
 I know, disapointing, but I'll find a similarly fascinating reason why that's important soon.
 So, to summarize: I want to build a phylogenetic tree on plant species not based on their genetic sequence but on the *functions* that this plant is able to execute.
 
-## The Gene Ontology
+# The Gene Ontology
 Historically, the function/role that a gene plays in an organism has always been described in natural language, however the researcher characterizing that gene deemed best.
 While this is nice to read, it is not very useful if you want to do computation on it, as computers are (still) horrible at understanding natural language and determining the structure in meaning behind the words.
 Additionally, different people will describe the same thing with different words, which has the potential for misunderstanding.
@@ -88,15 +88,18 @@ That way, a gene that has been annotated with the term *Cytokinesis after Meisos
 
 \noindent The Gene Ontology is quite well established in the field, so you will find GO annotations for almost all relevant UniProt entries or use dedicated tools like AmiGO or QuickGO to examine a protein of interest.
 
-## Data
+# Data
 Annotating genes with their functions can be done experimentally (e.g. by knocking out a certain gene and seeing what processes in the cell are affected), but that is a time-consuming and expensive process, so methods have been developed that try and predict the function of a given gene.
 Our lab has developed such a pipeline called GOMAP which combines different prediction approaches and is able to generate high-confidence and very extensive Functional Annotations in a reproducible manner [@Wimalanathan2018].
 We have been applying this pipeline to whole-genome assemblies of different plant species and generated functional annotations for every gene in each genome.
 These annotation sets are (or will be shortly) available from  
 \scriptsize https://dill-picl.org/projects/gomap/gomap-datasets \normalsize.
 
-## Method
-Starting point of our method are the functional annotation sets, one for each genome, which annotate every gene in the genome with one or more GO terms.
+# Method
+I am using two different tree building approaches, one is a distanced based method and the other a parsimony one.
+
+## Distance Based
+Starting point of our analysis are the functional annotation sets, one for each genome, which annotate every gene in the genome with one or more GO terms.
 In more mathematical terms the genome annotation set is a list of tuples $(G, T)$ with $G \in$ Genes in that genome and $T \in$ Terms in the Gene Ontology.
 \marginnote[-5em]{
 \texttt{Gene\ \ \ \ \ \ \ \ \ GO Term\\
@@ -138,11 +141,26 @@ Then, we determine the overlap (which corresponds to $S_a \cap S_b$), and divide
 Applying this formula to all pairwise combinations of the genomes we're looking at yields a $S \times S$ distance matrix that can then serve as the input for a neighbor joining algorithm (provided by PHYLIP).
 I rooted the resulting tree manually outside of the grasses (maize, wheat, rice, barley).
 
-## Result
+## Parsimony Based
 
-The phylogram is displayed in Figure \ref{fig:result}.
-4 of the 5 maize assemblies are grouped together in a clade, while the last one is an outlier to the remaining grasses and sits on a very long branch.
-In the remaining plants, cotton is an outlier to the legumes, which are all grouped in a single clade.
+Like in the previous method, we again start by enriching all taxa sets $(G,T)$ with their ancestor terms and discarding the gene association: $S = \bigcup_{i=1}^{x}(T_i \cup A_{i})$.
+
+Instead of using these sets for distance calculation, we combine them into a big binary matrix that displays which terms are present in which set:
+
+\begin{table}[]
+\begin{tabular}{lllllll}
+Taxon       & \scriptsize{GO:0016021} & \scriptsize{GO:0009699} & \scriptsize{GO:0050794} & \scriptsize{GO:0050789} & \scriptsize{GO:0060739} & ... \\
+\textit{G. max}      & 1          & 0          & 1          & 0          & 1          &     \\
+\textit{T. aestivum} & 1          & 1          & 0          & 1          & 1          &     \\
+...         &            &            &            &            &            &    
+\end{tabular}
+\end{table}
+
+This matrix was then used as the input for `pars` from the PHYLIP package to find the maximally parsimonious tree.
+
+# Results
+
+The phylogram created by the distance based method is displayed in Figure \ref{fig:result}, the maximum parsimony tree in figure \ref{fig:parsimony}.
 
 \begin{figure*}[htbp]
 \includegraphics{resources/result.png}
@@ -150,7 +168,21 @@ In the remaining plants, cotton is an outlier to the legumes, which are all grou
 \label{fig:result}
 \end{figure*}
 
-## Discussion
+\begin{figure*}[htbp]
+\includegraphics{resources/parsimonyTree.png}
+\caption{Phylogram built by looking for the maximally parsimonious tree (total of 7780 changes). Manually rooted between monocots and dicots.}
+\label{fig:parsimony}
+\end{figure*}
+
+Both trees were combined into a tanglegram (see figure \ref{fig:tanglegram}).
+
+\begin{figure*}[htbp]
+\includegraphics{resources/tanglegram.png}
+\caption{Tanglegram of the distance based and maximum parsimony tree (both manually rooted).}
+\label{fig:tanglegram}
+\end{figure*}
+
+# Discussion
 
 This tree shows surprising similarity to the taxonimic tree one might expect if it had been built on sequences^[I should probably display that expected tree here.]:
 The maize cultivars are all grouped together and there's even the distinction between the non-stiff stalk (W22 and Mo17), iodent (Ph207), and stiff stalk (maize_v4) classes.
