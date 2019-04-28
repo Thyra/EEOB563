@@ -177,37 +177,38 @@ The phylogram created by the distance based method is displayed in Figure \ref{f
 Both trees were combined into a tanglegram (see figure \ref{fig:tanglegram}).
 
 \begin{figure*}[htbp]
-\includegraphics{resources/tanglegram.png}
+\includegraphics{resources/Tanglegram.png}
 \caption{Tanglegram of the distance based and maximum parsimony tree (both manually rooted).}
 \label{fig:tanglegram}
 \end{figure*}
 
 # Discussion
 
-This tree shows surprising similarity to the taxonimic tree one might expect if it had been built on sequences^[I should probably display that expected tree here.]:
-The maize cultivars are all grouped together and there's even the distinction between the non-stiff stalk (W22 and Mo17), iodent (Ph207), and stiff stalk (maize_v4) classes.
-Only maize_v3, which is the same cultivar as maize_v4 (B73) is waaaay out there where it probably doesn't belong.
-We're currently investigating this but it seems that a lot went wrong with the genome assembly itself, which would naturally influence the functional annotations derived from it.
-The two medicago genotypes, while correctly placed together in one clade, are an outlier to the other legumes.
-In a taxonomic tree, their place would be switched with peanut.
-Steven Cannon, who is an evolutionary biologist working on legumes, assumes that the reason for that is that medicago has a much higher rate of evolution and gene birth and death than other plants [@Young2011].
-As you will have noticed, this is all just a work in progress at the moment. My PI and I will meet with Steven on Monday and discuss (among other things) the following questions -- feel free to comment in your review if you have any input!
+## Fulfilling expectancies?
+In a perfect world, the evolution of organisms could be just as easily retraced by the evolution of their *functions* as by their sequence; after all the selective pressure is on the mechinisms and activities of an organism and not on its DNA sequence. \marginnote{Although you may get lower resolution, because silent mutations or such that don't alter the function of a protein would be missed.}
 
-- How similar is this tree to the taxonomic tree?
-- What are the reasons for the differences, what are the reasons for the similarities?
-- What biases in the construction process need we be aware of?
-- What does the tree depict/how do we interpret it?
-- In what way could it be scientifically valuable?
-- Are there any other taxa that would be good to have in the tree?
-- Is there any further analysis that would be good to do? (e.g. branch support, looking at each GO aspect separately, a more sophisticated measure of GAF similarity, trying a character state based method instead of distance...)
-- Is rooting the tree there reasonable?
+The expected taxonimic tree is displayed in figure \ref{fig:expectedTree} and indeed the tree produced by the distance based method is quite similar (much more similar than I had expected).
+There are only two notable differences: *Sorghum* should be at the base of maize and not grouped with *Brachypodium* and *Medicago* and *Arachis* should switch their places.
+We are currently investigating the reason for this strange phenomenon and the best explanatioi we've come up with so far is that *Brachy* and *Medicago* are not actually representative of their respective group; they have been chosen as model organisms because they are easy to sequence but that's mainly because their genome is much smaller and less complex than that of actual crop plants. *Medicago* is also well known for having an unusally high rate of genomic evolution, gene births and gene deaths [@Young2011].
 
+\begin{marginfigure}
+\includegraphics{resources/expectedTree.png}
+\caption{Expected cladogram according to sequence based phylogenetics. \citep{Kellogg2001,Azani2017,Puttick2018}}
+\label{fig:expectedTree}
+\end{marginfigure}
 
-The tree is surprisingly similar to the taxonomic tree one might expect if it had been built on sequences^[I should probably display that expected tree here.], but why did it work so well?
-Given the number of taxa, it is unlikely that it is due to pure chance or noise but it is not clear whether this tree actually demonstrates a biologically meaningful difference in the functional annotations of these species or wehther it is simply a reproduction of some bias or artifact that stems from some element in the process.
+It is difficult to come to a clear evolutionary tree within the same species (I am talking about maize^[Many of the maize lines have more than one ancestor and there is an immense amount of horizontal gene transfer with maize, even to closely related species.]) but it is encouraging to see that in the generated tree the 3 different classes of maize (stiff stalk, non-stiff stalk, and iodent) are differentiated from each other in a reasonable way.
 
-To further examine this question, I wanted to see where the phylogenetic signal actually comes from.
-So I asked the following question: Which terms are common to all nitrogen fixing plants but do not occur in any other plant in the tree?^[in mathy words this is the intersection of terms in the nitrogen fixing species minus the union of terms in all other species]
+`r newthought("What about the parsimony tree?")` Surprisingly, the tree built on the parsimony method is not identical with the distance based one, and it is even less similar to the expected tree.
+Our first thought was that since the parsimony method does not search the complete tree space, it might simply not have found the distance based tree even though it is the most parsimonious one.
+Unfortunately that does not seem to be the case: The tree it found has a score of 7780, the distance based tree 7821. When manually switching *Medicago* and *Arachis* to get closer to the taxonomic tree, the score improved to 7812, but putting *Sorghum* at the place it was expected increased the score again to 7866.
+So it seems the answer is not that simple.
+
+## Tracing Back the Signal
+Another big question is why does the tree actually look the way it does? Is it truly a biologically meaningful display of differences and similarities in function or is it just an artifactual tree, mainly caused by a bias in the method.
+Given the number of taxa it seems unlikely that the similarity to the expected tree is just random noise, so there must be some systematic reason behind it.
+To make a first step answering this question, I investigated what actually causes species to cluster the way they do. I asked the following question: 
+Which terms are common to all nitrogen fixing plants but do not occur in any other plant in the tree?^[in mathy words this is the intersection of terms in the nitrogen fixing species minus the union of terms in all other species]
 If these terms are actually meaningful to the process of nitrogen fixation (or some other characteristic that clearly differentiates this group of plants from the others) that would indicate that the phylogenetic signal actually comes from biologically plausible differences in the functional annotations.
 So, here is the answer:
 
@@ -223,6 +224,21 @@ So, here is the answer:
 
 Three of these terms do seem plausible: The Nod Factor molecule that is secreted by the plant as a signal to Rhizobia bacteria is a phenylpropanoid, isoflavone 7-O-methyltransferase activity is involved in Nod Factor synthesis, and the nodule has a complex lipid membrane system – and Nod Factor has a lipid component (which could explain lipid phosphatase activity).
 The last 4 terms are possibly plausible, but less certain, but the two otolith terms seem very out of place, since they describe small oval calcareous bodies in the inner ear of vertebrates, not something expected to be found in legumes.
+There might still be some biological significance to it but we're not sure yet what that might be. So for now it seems that some of the signal clearly comes from biological differences while some other part might be due to the method.
+
+## What's next?
+
+Since this is part of a publication I am working on, a lot more thought will be put into, for example, the following questions:
+
+- How similar is this tree to the taxonomic tree?
+- What are the reasons for the differences, what are the reasons for the similarities?
+- What biases in the construction process need we be aware of?
+- What does the tree depict/how do we interpret it?
+- In what way could it be scientifically valuable?
+- Are there any other taxa that would be good to have in the tree?
+- Is there any further analysis that would be good to do? (e.g. branch support, looking at each GO aspect separately, a more sophisticated measure of GAF similarity...)
+- Is rooting the tree there reasonable?
+
 
 ## Reproducing the Tree
 To reproduce this tree, follow these steps on a Linux machine that has PHYLIP available:
