@@ -1,7 +1,7 @@
 ---
 title: "Genome Function Phylogenetics"
 author: "Dennis Psaroudakis"
-date: "April 18th 2019"
+date: "April 28th 2019"
 keep_md: yes
 output:
   tufte::tufte_handout:
@@ -240,18 +240,30 @@ Since this is part of a publication I am working on, a lot more thought will be 
 - Is rooting the tree there reasonable?
 
 
-## Reproducing the Tree
+# Reproducing the Tree
 To reproduce this tree, follow these steps on a Linux machine that has PHYLIP available:
 
 ```bash
 git clone https://github.com/Thyra/EEOB563.git paper_dennis # Clone the repository
 cd paper_dennis/final_project # change into the directory
-./build_distance_matrix > infile
+
+# Distance based method
+bin/build_distance_matrix annotation_sets/*tree.json > distance_matrix.phy
 module load phylip # (if you're on HPC)
 neighbor # (use standard options)
+
+# Parsimony based Method
+bin/binary_table annotation_sets/*.tree.json > binary.csv
+bin/binary2phylip binary.csv > binary.phy
+module load phylip
+pars # (again, standard options)
+
+# If you're adding more GAFs
+bin/gaf2json <new_gaf>
+# Then repeat distance or parsimony as above
+
+# To replace GAF filenames with species names in newick tree
+bin/rename_taxa <tree.newick> resources/taxa_name_mapping.csv
 ```
 
-\noindent The resulting tree is in `outtree`.
-Manually root it (e.g. with Dendrogram) outside of the grasses (maize, wheat, barley) and you should end up with the same tree.
-This will use the pre-summarized `.tree.json` files in annotation_sets, if you want to completely reproduce it from scratch, delete them and only leave the `.gaf.gz` files.
-But be warned, this will take a while to calculate (probably over two hours).
+\noindent If any of the binaries fails without a message that says otherwise, you probably need to install some more libraries. If that doesn't help you may have to recompile them for your processor type (they're written in [Crystal](https://crystal-lang.org/), source code is in `src/`)
