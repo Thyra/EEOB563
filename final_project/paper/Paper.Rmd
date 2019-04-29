@@ -24,15 +24,18 @@ knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tufte'))
 options(htmltools.dir.version = FALSE)
 ```
 
-`r newthought("When we build phylogenetic trees,")` we often use the sequences of certain genes as the basis for our tree.
-They are the direct substrate of evolution so that makes sense, but practically often too abstract to be helpful.
-Let's say for example, that you have a patient infected with a novel pathogen.
-You can identify that pathogen and place it somewhere in the bacterial taxonomy, but unfortunately, none of the treatments that you usually use for closely related species show any effect against this one.
+`r newthought("When we build phylogenetic trees,")` we often use the DNA or protein sequences of certain genes^[with appropriate degree of conservedness depending on the evolutionary distance of the taxa, little probability of horizontal gene transfer, reliable for sequencing and alignment etc.] as the basis for our analysis.
+They are the direct substance of evolution so that makes sense, especially when we need high resolution (i.e. a signal in very closely related organisms).
+In some cases, they don't give the answer we're looking for though:
+Let's say for example, that you're a doctor and one of your patients is infected with a novel pathogen.
+You can sequence that pathogen and place it somewhere in the bacterial taxonomy, and naturally you will start treating the patient based on what you know about closely related species.
+Unfortunately, none of the antibiotics you're using show any effect.
 How come?
 Just because two organisms are closely related does not *necessarily* mean that they are similar in their phenotype.
-So a tree that groups organisms based on their actual *in vivo* similarity would be much more helpful here.
-There are such trees built on phenotypic characteristics but unfortunately the choice of what characteristics to look at is not trivial and always situation-dependent.
-They can also be considered quite arbitrary\sidenote{
+Especially if you've only used genes that are suitable for regular phylogenetics but don't actually have anything to do with the organism's metabolism, membrane structure etc, you have no guarantee that close evolutionary relationship means similar response to environmental factors.
+In this case, a tree that can group your pathogen with organisms based on their actual *in vivo* similarity would be much more helpful here.
+There are trees built on phenotypic characteristics (nose color, ear length...) but the choice of what characteristics to look at is not trivial and has an incredible influence on the result.
+You will never be able to cover all relevant attributes and your choice can therefore be considered somewhat arbitrary\sidenote{
 Look at this (parodic) taxonomy of animals by Jorge Luis Borges:
 1. those that belong to the Emperor,
 2. embalmed ones,
@@ -47,17 +50,16 @@ Look at this (parodic) taxonomy of animals by Jorge Luis Borges:
 11. those drawn with a very fine camelhair brush,
 12. others,
 13. those that have just broken a flower vase,
-14. those that from a long way off look like flies.
+14. those that from a long way off look like flies.\medskip
 }.
-What's needed would be something that is exhaustive, clearly defined, and reproducible, but also more meaningful than just a DNA sequence.
-And they did it [@Zhu2015]!
+A method would be needed that is exhaustive, clearly defined, and reproducible, but also more effective at finding the answer you're looking for than using the DNA sequence.
+And, unsurprisingly, there is [@Zhu2015] (it's a cool paper, check it out)!
 
-In this paper, I'm going to do something slightly similar. Not on bacteria, but on plants though.
-I know, disapointing, but I'll find a similarly fascinating reason why that's important soon.
-So, to summarize: I want to build a phylogenetic tree on plant species not based on their genetic sequence but on the *functions* that this plant is able to execute.
+In this paper, I'm going to do something less exciting. Instead of working with life-threatening bacteria and saving patients, I will focus on plants.
+The idea is somewhat similar though^[and I had the idea myself first and only found the paper afterwards]: I want to build a phylogenetic tree of plant species, not based on their genetic sequence but on the processes, structures, and reactions that are present in it.
 
 # The Gene Ontology
-Historically, the function/role that a gene plays in an organism has always been described in natural language, however the researcher characterizing that gene deemed best.
+Historically, the function/role that a gene plays in an organism has been described in natural language, however the researcher characterizing that gene deemed best.
 While this is nice to read, it is not very useful if you want to do computation on it, as computers are (still) horrible at understanding natural language and determining the structure in meaning behind the words.
 Additionally, different people will describe the same thing with different words, which has the potential for misunderstanding.
 
@@ -193,8 +195,9 @@ We are currently investigating the reason for this strange phenomenon and the be
 
 \begin{marginfigure}
 \includegraphics{resources/expectedTree.png}
-\caption{Expected cladogram according to sequence based phylogenetics. \citep{Kellogg2001,Azani2017,Puttick2018}}
+\caption{Expected cladogram. \citep{Kellogg2001,Azani2017,Puttick2018}}
 \label{fig:expectedTree}
+\medskip
 \end{marginfigure}
 
 It is difficult to come to a clear evolutionary tree within the same species (I am talking about maize^[Many of the maize lines have more than one ancestor and there is an immense amount of horizontal gene transfer with maize, even to closely related species.]) but it is encouraging to see that in the generated tree the 3 different classes of maize (stiff stalk, non-stiff stalk, and iodent) are differentiated from each other in a reasonable way.
