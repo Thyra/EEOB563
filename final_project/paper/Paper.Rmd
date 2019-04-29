@@ -61,11 +61,12 @@ The idea is somewhat similar though^[and I had the idea myself first and only fo
 # The Gene Ontology
 Historically, the function/role that a gene plays in an organism has been described in natural language, however the researcher characterizing that gene deemed best.
 While this is nice to read, it is not very useful if you want to do computation on it, as computers are (still) horrible at understanding natural language and determining the structure in meaning behind the words.
-Additionally, different people will describe the same thing with different words, which has the potential for misunderstanding.
+Additionally, different people will describe the same thing with different words, so there is always a potential for misunderstanding.
 
-Ontologies try to alleviate these problems by providing a strictly organized and controlled vocabulary and defined relationships between the terms, so that the same statement always means the same thing, no matter the context or the  author. Additionally, ontologies can be understood by computers if all relationships and terms are clearly defined.
+Ontologies try to alleviate these problems by providing a strictly organized and controlled vocabulary and defined relationships between the terms, so that the same statement always means the same thing, no matter the context or the author. Additionally, ontologies can be understood by computers if all relationships and terms are clearly defined.
 
-The Gene Ontology (GO) is such an ontology that describes genes by the properties of their product.
+The Gene Ontology (GO) is such an ontology.
+It describes genes by the properties of their product.
 \marginnote{"The mission of the GO Consortium is to develop an up-to-date, comprehensive, computational model of biological systems, from the molecular level to larger pathways, cellular and organism-level systems."
 
 \raggedleft --- GO Consortium (geneontology.org)}
@@ -85,14 +86,14 @@ That way, a gene that has been annotated with the term *Cytokinesis after Meisos
 
 \noindent When proteins are annotated with these terms instead of just natural language, we can now computationally answer some interesting questions, such as:
 
-- How similar in function is protein A to protein B? (One answer would be: How many steps in the GO graph do I need from term A to B? The fewer steps, the more similar the function)
+- How similar in function^[*Function* refers to any aspect of the GO, not just Molecular Function.] is protein A to protein B? (One answer would be: How many steps in the GO graph do I need from term A to B? The fewer steps, the more similar the function)
 - If protein A is involved in Biological Process XYZ, what other proteins are involved in that same process?
 
-\noindent The Gene Ontology is quite well established in the field, so you will find GO annotations for almost all relevant UniProt entries or use dedicated tools like AmiGO or QuickGO to examine a protein of interest.
+\noindent The Gene Ontology is quite well established in the field, so you will find GO annotations all across UniProt entries or be able to use dedicated tools like [AmiGO](http://amigo.geneontology.org/amigo) or [QuickGO](https://www.ebi.ac.uk/QuickGO/) to examine a protein of interest.
 
 # Data
-Annotating genes with their functions can be done experimentally (e.g. by knocking out a certain gene and seeing what processes in the cell are affected), but that is a time-consuming and expensive process, so methods have been developed that try and predict the function of a given gene.
-Our lab has developed such a pipeline called GOMAP which combines different prediction approaches and is able to generate high-confidence and very extensive Functional Annotations in a reproducible manner [@Wimalanathan2018].
+Annotating genes with their functions can be done experimentally (e.g. by knocking out a certain gene and seeing what processes in the cell are affected), but that is a time-consuming and expensive process, so methods have been developed that try to predict the function of a given gene.
+Our lab has developed such a pipeline called [Gene Ontology Meta Annotator for Plants (GOMAP)](https://dill-picl.org/projects/gomap/) which combines different prediction approaches and is able to generate high-confidence and very extensive Functional Annotations in a reproducible manner [@Wimalanathan2018].
 We have been applying this pipeline to whole-genome assemblies of different plant species and generated functional annotations for every gene in each genome.
 These annotation sets are (or will be shortly) available from  
 \scriptsize https://dill-picl.org/projects/gomap/gomap-datasets \normalsize.
@@ -187,11 +188,11 @@ Both trees were combined into a tanglegram (see figure \ref{fig:tanglegram}).
 # Discussion
 
 ## Fulfilling expectancies?
-In a perfect world, the evolution of organisms could be just as easily retraced by the evolution of their *functions* as by their sequence; after all the selective pressure is on the mechinisms and activities of an organism and not on its DNA sequence. \marginnote{Although you may get lower resolution, because silent mutations or such that don't alter the function of a protein would be missed.}
+In a perfect world, the evolution of organisms could be just as easily retraced by the evolution of their functions as by their sequence; after all the selective pressure is on the mechinisms and activities of an organism and not on its DNA sequence and what differentiates two species from each other are the differences in their *in vivo* pheontype. \marginnote{Although you may get lower resolution, because silent mutations or such that don't alter the function of a protein would be missed.}
 
 The expected taxonimic tree is displayed in figure \ref{fig:expectedTree} and indeed the tree produced by the distance based method is quite similar (much more similar than I had expected).
 There are only two notable differences: *Sorghum* should be at the base of maize and not grouped with *Brachypodium* and *Medicago* and *Arachis* should switch their places.
-We are currently investigating the reason for this strange phenomenon and the best explanatioi we've come up with so far is that *Brachy* and *Medicago* are not actually representative of their respective group; they have been chosen as model organisms because they are easy to sequence but that's mainly because their genome is much smaller and less complex than that of actual crop plants. *Medicago* is also well known for having an unusally high rate of genomic evolution, gene births and gene deaths [@Young2011].
+We are currently investigating the reason for this phenomenon and the best explanation we've come up with so far is that *Brachy* and *Medicago* are not actually good representations of their respective group; they have been chosen as model organisms because they are easy to sequence but that's mainly because their genome is much smaller and less complex than that of actual crop plants. *Medicago* is also well known for having an unusally high rate of genomic evolution, gene births and gene deaths [@Young2011].
 
 \begin{marginfigure}
 \includegraphics{resources/expectedTree.png}
@@ -200,15 +201,15 @@ We are currently investigating the reason for this strange phenomenon and the be
 \medskip
 \end{marginfigure}
 
-It is difficult to come to a clear evolutionary tree within the same species (I am talking about maize^[Many of the maize lines have more than one ancestor and there is an immense amount of horizontal gene transfer with maize, even to closely related species.]) but it is encouraging to see that in the generated tree the 3 different classes of maize (stiff stalk, non-stiff stalk, and iodent) are differentiated from each other in a reasonable way.
+It is difficult to come up with a clear evolutionary tree within the same species (I am talking about maize^[Many of the maize lines have more than one ancestor and there is an immense amount of horizontal gene transfer with maize, even to closely related species.]) but it is encouraging to see that in the generated tree the 3 different classes of maize (stiff stalk, non-stiff stalk, and iodent) are differentiated from each other in a reasonable way.
 
 `r newthought("What about the parsimony tree?")` Surprisingly, the tree built on the parsimony method is not identical with the distance based one, and it is even less similar to the expected tree.
 Our first thought was that since the parsimony method does not search the complete tree space, it might simply not have found the distance based tree even though it is the most parsimonious one.
 Unfortunately that does not seem to be the case: The tree it found has a score of 7780, the distance based tree 7821. When manually switching *Medicago* and *Arachis* to get closer to the taxonomic tree, the score improved to 7812, but putting *Sorghum* at the place it was expected increased the score again to 7866.
-So it seems the answer is not that simple.
+So it seems the answer is not that simple and we will have to reflect more on our methods to understand where the difference comes from and which is the more meaningful result.
 
 ## Tracing Back the Signal
-Another big question is why does the tree actually look the way it does? Is it truly a biologically meaningful display of differences and similarities in function or is it just an artifactual tree, mainly caused by a bias in the method.
+Another big question is why the tree actually looks the way it does. Is it truly a biologically meaningful display of differences and similarities in function or is it just an artifactual tree, caused by a bias in the method.
 Given the number of taxa it seems unlikely that the similarity to the expected tree is just random noise, so there must be some systematic reason behind it.
 To make a first step answering this question, I investigated what actually causes species to cluster the way they do. I asked the following question: 
 Which terms are common to all nitrogen fixing plants but do not occur in any other plant in the tree?^[in mathy words this is the intersection of terms in the nitrogen fixing species minus the union of terms in all other species]
@@ -227,7 +228,7 @@ So, here is the answer:
 
 Three of these terms do seem plausible: The Nod Factor molecule that is secreted by the plant as a signal to Rhizobia bacteria is a phenylpropanoid, isoflavone 7-O-methyltransferase activity is involved in Nod Factor synthesis, and the nodule has a complex lipid membrane system – and Nod Factor has a lipid component (which could explain lipid phosphatase activity).
 The last 4 terms are possibly plausible, but less certain, but the two otolith terms seem very out of place, since they describe small oval calcareous bodies in the inner ear of vertebrates, not something expected to be found in legumes.
-There might still be some biological significance to it but we're not sure yet what that might be. So for now it seems that some of the signal clearly comes from biological differences while some other part might be due to the method.
+There might still be some biological significance to it but we're not sure yet what that might be. So for now it seems that some of the signal clearly comes from biological differences while some other part might be due to the method.^[I looked at other, similar constellations as well and the answer was the same (e.g. what differentiates non-stiff stalk maize lines from the others).]
 
 ## What's next?
 
@@ -239,6 +240,7 @@ Since this is part of a publication I am working on, a lot more thought will be 
 - What does the tree depict/how do we interpret it?
 - In what way could it be scientifically valuable?
 - Are there any other taxa that would be good to have in the tree?
+- Should we get rid of *Brachypodium* and *Medicago*?
 - Is there any further analysis that would be good to do? (e.g. branch support, looking at each GO aspect separately, a more sophisticated measure of GAF similarity...)
 - Is rooting the tree there reasonable?
 
